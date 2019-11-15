@@ -1,0 +1,80 @@
+<!-- <view class="hide{{showView?'show':''}} mask" >
+  <view class="mask-content">
+    <button>选择</button>
+    <button class="m1 {{showView?'':'show'}}" bindtap="onChangeShowState">取消</button>
+    <button class='m2'>相机</button>
+    <button class='m2'>从相册选取</button>
+  </view>
+</view> -->
+
+
+
+    
+    
+    
+<form bindsubmit='applycredit' bindreset="foo"> 
+<view class="apply-jg"></view>
+<view class='content'>
+  <view class='apply-list'>
+    <text class='a1 fl'>*</text>
+    <text class='a2 fl'>承兑企业名称</text>
+    <input type='text' class='fr' name='company_name' placeholder='请输入承兑企业名称' maxlength='32' value='{{company_name}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list'>
+    <text class='a1 fl'>*</text>
+    <text class='a2 fl'>企业联系人</text>
+    <input type='text' class='fr' name='company_contacts' placeholder='请输入企业联系人' maxlength='32' value='{{company_contacts}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list border'>
+    <text class='a1 fl'>*</text>
+    <text class='a2 fl'>联系电话</text>
+    <input type='number' class='fr' name='contactnumber' placeholder='请输入手机号码' maxlength='11' value='{{contactnumber}}'></input>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='pmxx'>票面信息</view>
+<view class='content'>
+  <text class='a3'>汇票图片</text>
+  <view class="{{showView?'show':''}} camera" bindtap="onChangeShowState">
+    <image src='{{apply_img}}' class='apply-img'></image>
+  </view>
+  <view class='apply-list bor-top'>
+    <text class='a2 fl'>承兑人信息</text>
+    <input type='text' class='fr' name='acceptor' placeholder='请输入承兑人信息' maxlength='32' value='{{acceptor}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list'>
+    <text class='a2 fl'>出票人全称</text>
+    <input type='text' class='fr' name='drawer' placeholder='请输入出票人全称' maxlength='32' value='{{drawer}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list'>
+    <text class='a2 fl'>收票人全称</text>
+    <input type='text' class='fr' name='taker' placeholder='请输入收票人全称' maxlength='32' value='{{taker}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list'>
+    <text class='a2 fl'>票据金额（万）</text>
+    <input type='number' class='fr' maxlength='11' placeholder='请输入票据金额' name='money' value='{{money}}'></input>
+    <view class='clear'></view>
+  </view>
+  <view class='apply-list'>
+    <text class='a2 fl'>信用等级</text>
+    <view class="section fl">
+       <!-- <view class="section__title">普通选择器</view>  -->
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <image src='../../images/apply_02.png' class='fl apply-next'></image>
+    <view class='clear'></view>
+  </view>
+</view>
+<view class='bottom'>
+  <button form-type='submit'>提交</button>
+</view>
+</form>

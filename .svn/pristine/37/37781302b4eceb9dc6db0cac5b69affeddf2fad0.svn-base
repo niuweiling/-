@@ -1,0 +1,88 @@
+<view class="container">
+  <view class="result_con">
+      <view class="tc cal_title">
+             --------------------<text>得出结果</text>--------------------
+       </view>
+      <view class="result_box">
+           <view class="flex-row">
+     <text>计息天数:</text>
+     <input type="digit" placeholder="12" class="mtxt greybg" value="{{days}}" disabled="disabled"/>
+     <input type="text" placeholder="天" class="stxt greybg" disabled="disabled" style="text-align:center;background:#aaa;color:#222  ;"/>
+  </view>
+  <view class="flex-row">
+     <text>每十万贴息:</text>
+     <input type="digit" placeholder="0" class="mtxt greybg" disabled="disabled" value="{{perTen}}" bindinput="listenerPerTenInput"/>
+     <button type="primary" size="{{miniSize}}" loading="{{loading}}" plain="{{plain}}"
+         class="orange" bindtap="clickButton" >再计算 </button>
+  </view>
+  
+  <view class="flex-row">
+     <text>贴现利息:</text>
+     <input type="digit" placeholder="0" class="mtxt greybg" disabled="disabled" value="{{charges}}"/>
+     <button type="primary" size="{{miniSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="changeLv" class="orange">转换利率 </button>
+  </view>
+  <view class="flex-row">
+     <text>贴现金额:</text>
+     <input type="digit" placeholder="0" class="mtxt greybg" disabled="disabled" value="{{money}}" bindinput="listenerMoneyInput"/>
+     <button type="primary" size="{{miniSize}}" loading="{{loading}}" plain="{{plain}}"  class="orange" bindtap="clickButton1">再计算        </button>
+     </view>
+     </view>
+
+  </view>
+  <view class="cal_con">
+      <view class="tc cal_title">
+             --------------------<text>开始计算</text> --------------------
+       </view>
+      <view class="cal_box">
+        <view class="flex-row flex-tj flex-row-fl3 marLeft30">
+    <text>票面金额(万元)</text>
+    <input type="digit" placeholder="请输入金额" value="{{id1}}" bindblur="blurVal" id="id1"/>
+  </view>
+  <view class="flex-row flex-tj flex-row-fl3">
+     <text>月利率(‰)</text>
+    <input  type="digit" placeholder="‰" value="{{id2}}"  id="id2" disabled="{{disabled}}"  bindinput="bindKeyInput"/>
+  </view>
+  <view class="flex-row flex-tj flex-row-fl3">
+     <text>年利率(%)</text>
+     <input type="digit" placeholder="%" value="{{id3}}"  id="id3" disabled="{{disabled2}}" bindinput="bindKeyInput"/>
+  </view>
+  <view class="clear line"></view>
+  <view class="flex-row flex-tj flex-row-fl2 marLeft30">
+     <text>贴现日期{{tu}}</text>
+    <picker mode="date" value="{{date1}}" start="{{minDate}}" end="{{maxDate}}"  bindchange="dateChange" class="v-mode" placeholder="请输入日期">
+     {{date1}}{{week1}}
+    </picker>
+  </view>
+  <view class="flex-row flex-tj flex-row-fl2">
+     <text>到期日期</text>
+    <picker mode="date" value="{{date2}}" start="{{minDate}}" end="{{maxDate}}"  bindchange="dateChanges" class="v-mode" placeholder="请输入日期">
+     {{date2}}{{week2}}
+    </picker>
+  </view>
+ <view class="clear line"></view>
+  <view class="flex-row flex-tj flex-row-fl2 marLeft30">
+     <text style="padding-right:30rpx;">调整天数</text>
+     <input type="digit" placeholder="天" class="stxt" value="{{id4}}" id="id4" bindblur="blurVal"/>
+     <button  bindtap="color" class="{{className}}" id="electric">电</button>
+     <button  bindtap="color" id="paper" hover-class="se" class="{{className2}}">纸</button>
+  </view>
+  <view class="flex-row flex-tj flex-row-fl2">
+     <text>每十万手续费:</text>
+    <input type="digit" placeholder="0" value="{{id5}}" id="id5"  bindblur="blurVal"/>
+  </view>
+  <view class="clear line"></view>
+  <view class="flex-row flex-tj" style="padding-top:20rpx;">
+    <button type="primary"loading="{{loading}}" plain="{{plain}}"
+       bindtap="clearUp" class="medium" style="background:#eb9e18;">清空 </button>
+     <button type="primary"  loading="{{loading}}" plain="{{plain}}"
+        bindtap="calculate" class="medium" style="background:#7ecef4;">计算</button>
+  </view>
+
+      </view>
+  </view>
+  
+</view>
+<modal hidden="{{hidden}}" title="{{mtitle}}" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}" style="position:absolute;z-index:12;">
+    <text style="display:block;margin-left:80rpx;line-height:40rpx;">{{content}}</text>
+</modal>

@@ -1,0 +1,78 @@
+/* pages/my/mybj/mybj.wxss */
+.content{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box
+}
+.top{
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom: solid #e6e6e6 1px
+}
+.top text{
+  display: block;
+  font-size: 24rpx;
+  color: #101010;
+  width: 85%;
+}
+.img{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+}
+.img-next{
+  width: 10rpx;
+  height: 20rpx;
+  margin-top: 40rpx;
+  margin-left: 30rpx;
+}
+.list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: solid #e6e6e6 1px;
+}
+.list text{
+  display: block;
+  width:17%;
+  font-size: 24rpx;
+  color: #101010; 
+}
+.list input{
+  display: block;
+  width: 83%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.bottom{
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.bottom text{
+  display: block;
+  width:17%;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #101010; 
+}
+.bottom textarea{
+  width: 83%;
+  font-size: 24rpx;
+  display: block
+}
+.btn{
+  display: block;
+  background: #8797ED;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
+  border: none
+}

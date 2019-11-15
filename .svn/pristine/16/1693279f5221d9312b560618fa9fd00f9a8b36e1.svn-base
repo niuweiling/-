@@ -1,0 +1,46 @@
+<view class='content'>
+  <view class='list flex'>
+    <text class='x1'>票据类型</text>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+      </label>
+    </radio-group>
+  </view>
+  <!-- 2 -->
+  <view class='list flex'>
+    <text class='x1'>承兑行类型</text>
+    <view class="section fl">
+       <!-- <view class="section__title">普通选择器</view>  -->
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker change">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <image src='../../images/apply_02.png' class='fl apply-next'></image>
+    <view class='clear'></view>
+  </view>
+  <!-- 3 -->
+  <view class='list flex'>
+    <text class='x1'>票面金额</text>
+    <input type='number' maxlength='12' placeholder='请输入票面金额' class='input' bindinput="money" 
+    value="{{money}}"></input>
+    <text class='x2'>万</text>
+  </view>
+  <!-- 4 -->
+  <view class='list flex'>
+    <text class='x1'>到期日期</text>
+    <view class="section date">
+      <picker mode="date" value="{{date}}" start="1999-09-01" end="2999-09-01" bindchange="bindDateChange">
+        <view class="picker date-text">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+    <image src='../../images/apply_02.png' class='fl apply-next'></image>
+  </view>
+</view>
+<view class='bottom' bindtap='xjjg'>
+  <button>询价</button>
+</view>

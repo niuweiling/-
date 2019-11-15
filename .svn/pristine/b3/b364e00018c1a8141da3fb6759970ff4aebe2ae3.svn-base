@@ -1,0 +1,96 @@
+<!-- 票面录入 -->
+<view class="hide{{showView?'show':''}} mask" >
+  <view class="mask-content">
+    <button class='m3'>选择</button>
+    <button class="m1" bindtap="onChangeShowState">取消</button>
+    <button class='m2'>从相册选取</button>
+  </view>
+</view>
+
+<!-- 正在识别 -->
+<view class="hide{{showView1?'show':''}} mask" >
+  <view class='shibie'>
+    <text class='h12'>{{time}}%</text>
+    <text class='h13'>正在识别</text>
+  </view>
+  <view class='close'>
+    <image src='../../images/hpsc_01.png' bindtap='close' class='close-img'></image>
+  </view>
+</view>
+<!-- 全部 -->
+
+<view class='top' >
+
+
+  <view bindtap="clickPerson" style='float:left;width:100%;'>
+  {{title}}
+  
+  <image class="top-btn {{selectArea ? 'rotateRight' :''}}"   src='../../images/pmxq.png'></image>
+  </view>
+ <view  bindtap="binsearch" style="width:10%;height:100%;float:left;position:absolute;right:0;">
+  <image src='../../images/index_01.png' class='search'></image>
+  </view>
+</view>
+<view class='top-content' hidden="{{selectPerson}}">
+ <view class='top-list' bindtap="clickPersonone" data-value="0" data-title="全部">
+    <view class='yuan white'></view>
+    <text>全部</text>
+  </view>
+
+  <view class='top-list' bindtap="clickPersonone" data-value="4" data-title="电子银行承兑汇票">
+    <view class='yuan red'></view>
+    <text>电子银行承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="3" data-title="电子商业承兑汇票">
+    <view class='yuan green'></view>
+    <text>电子商业承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="2" data-title="纸质银行承兑汇票">
+    <view class='yuan blue'></view>
+    <text>纸质银行承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="1" data-title="纸质商业承兑汇票">
+    <view class='yuan yellow'></view>
+    <text>纸质商业承兑汇票</text>
+  </view>
+</view>
+<view class='clear'></view>
+<scroll-view scroll-y="true" style="height: {{Height}}px" class='content' hidden="{{!isinfomation}}"
+     bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+  
+    <!-- 1 -->
+
+    <view wx:for="{{collectlist}}" wx:for-item="collectlist">
+      <view class='hpsc fr'>
+      <view class='hpsc-list' bindtap="tapcollect" data-id='{{collectlist.id}}'>
+        <block  wx:if="{{collectlist.is_sale == 'Y'}}">
+        <image src='../../images/hpsc_03.png' class='img-success'></image>
+        </block>
+        <text class='h1'>{{collectlist.accept_name}}</text>
+        <text class='h1'>票面金额：{{collectlist.amount}}</text>
+        <text class='h1'>汇票到期日：{{collectlist.expire_time}}</text>
+        <view class='h2'></view>
+        <text class='h3'>{{collectlist.time_h_i}} {{collectlist.location}}</text>
+        <view class='h4 {{drafttype[collectlist.draft_type - 1]}}'></view>
+        <view class='h5'>
+          <text class='h6'>{{collectlist.time_d}} {{collectlist.time_week}}</text>
+          <text class='h1'>{{collectlist.time_y_m}}</text>
+        </view>
+      </view>
+      </view>
+    </view>
+   
+    <view class='clear'></view>
+   
+  
+  <view class='clear'></view>
+</scroll-view>
+
+ <view class='h10' hidden="{{isinfomation}}">暂无数据</view>
+<!-- 票面录入 -->
+<view class="bottom {{isIPhoneX?'padX':'' }}" bindtap="changeAvatar">
+  <view class='camera flex'>
+    <image src='../../images/hpsc.png' class='h11' ></image>
+    <text class='h16'>票面录入</text>
+  </view>
+</view>

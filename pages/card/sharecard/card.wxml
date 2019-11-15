@@ -1,0 +1,36 @@
+<view class='content'>
+  <view class='list'>
+   <view class='list-top flex'>
+      <view class='left'>
+        <view>
+          <text class='a1'>{{name}}\n\t</text>
+          <text class='a2'>{{position}}</text>
+        </view>
+        <view class='a2'>业务介绍：{{bpt}}</view>
+        <view class='a2'>手机号：{{phone}}</view>
+        <view class='a2'>公司：{{org_name}}</view>
+        <view class='a2'>地址：{{address}}</view>
+      </view>
+      <view class='right'>
+        <image src='{{avatar}}' class='right-img'></image>
+      </view>
+   </view>
+   <view class='list-bottom flex'>
+    <view class='item' bindtap='bindsouc' data-vaild='{{soucvaild}}' data-name='souc'>
+      <image src='{{soucimg}}' style="{{soucstyle_img}}"></image>
+     
+      <text>收藏：{{soucCount}}</text>
+    </view>
+    <view class='item' bindtap='bindsouc' data-name='liul'>
+      <image src='../../images/card_03.png'></image>
+      <text>浏览：{{liulCount}}</text>
+    </view>
+    <view class='item' bindtap='bindsouc' data-vaild='{{dianzvaild}}' data-name='dianz'>
+      <image src='{{dianzimg}}' style="{{dianzstyle_img}}"></image>
+     
+      <text>点赞：{{dianzCount}}</text>
+    </view>
+   </view>
+  </view>
+</view>
+<button class='btn' bindtap='goto'>打开承兑计算器</button>

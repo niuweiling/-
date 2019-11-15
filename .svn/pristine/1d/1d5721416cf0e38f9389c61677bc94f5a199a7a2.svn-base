@@ -1,0 +1,687 @@
+Page({
+  data:{
+   id1:"",
+   id2:"",
+   id3:"",
+   id4:"",
+   id5:"",
+   mtitle:"",
+   content:"",
+   days:"0",
+   charges:"0",
+   money:"0",
+   perTen:"0",
+   className:true,
+   className2:false,
+   hidden:true,
+   nocancel:true,
+   disabled: false,
+   disabled2: false,
+   tu:"",
+   date1:'请选择日期',
+   week1:"",
+   week2:"",
+   date2:'请选择日期'
+  },
+  onLoad:function(options){
+    // 生命周期函数--监听页面加载
+ 
+  },
+  onReady:function(){
+    // 生命周期函数--监听页面初次渲染完成
+    this.initdate();
+    
+  },
+   
+  onShow:function(){
+    // 生命周期函数--监听页面显示
+ 
+  },
+  onHide:function(){
+    // 生命周期函数--监听页面隐藏
+   
+  },
+  onUnload:function(){
+    // 生命周期函数--监听页面卸载
+    
+  },
+  onPullDownRefresh: function() {
+    // 页面相关事件处理函数--监听用户下拉动作
+   // String7
+  },
+  onReachBottom: function() {
+    // 页面上拉触底事件的处理函数
+    //String8
+  },
+  onShareAppMessage: function() {
+    // 用户点击右上角分享
+    // return {
+    //   title: '乐享贴现计算器', // 分享标题
+    //   desc: 'desc', // 分享描述
+    //   path: '/pages/index/index' // 分享路径
+    // }
+  
+
+  },
+  dateChange: function(e) {
+    /*
+    this.setData({disabled:false});
+    this.setData({disabled2:false});
+    */
+    this.setData({ date1: e.detail.value,  });
+    var week=this.weekday(this.data.date1);
+    this.setData({week1:week});
+   },
+   weekday:function(m){
+     var n=new Date(m).getDay();
+     switch(n){
+      case 1: return "—星期一";
+              break;
+      case 2: return "—星期二";
+              break;
+      case 3: return "—星期三";
+              break;
+      case 4: return "—星期四";
+              break;
+      case 5: return "—星期五";
+              break;
+      case 6: return "—星期六";
+              break;
+      case 0: return "—星期日";
+              break;
+
+     }
+   },
+    dateChanges: function(e) {
+   
+    this.setData({ date2: e.detail.value,});
+    var date_end=this.data.date2;
+  var ary1=["2017-04-02","2017-04-29","2017-05-28","2017-10-06","2017-12-30","2018-02-19","2018-04-05","2018-04-29","2018-06-16","2018-09-22","2018-10-04",
+    "2018-12-30",
+    "2019-02-08",
+    "2019-04-05",
+    "2019-04-29",
+    "2019-06-07",
+    "2019-09-13",
+    "2019-10-05"
+  
+  
+  
+  ];//3天
+  var ary2=["2017-04-03","2017-04-30","2017-05-29","2017-10-07","2017-12-31","2018-02-30","2018-04-06","2018-04-30","2018-06-17","2018-09-23","2018-10-05",
+    "2018-12-31",
+    "2019-02-09",
+    "2019-04-06",
+    "2019-04-30",
+    "2019-06-08",
+    "2019-09-14",
+    "2019-10-06"
+  
+  
+  ];//2天
+  var ary3=["2017-04-04","2017-05-01","2017-05-30","2017-10-08","2018-01-01","2018-02-21","2018-05-01","2018-06-18","2018-09-24","2018-10-06",
+    "2019-01-01",
+    "2019-02-10",
+    "2019-04-07",
+    "2019-05-01",
+    "2019-06-09",
+    "2019-09-15",
+    "2019-10-07"
+  
+  ];  //1天
+  var ary4=["2017-04-01","2017-05-27","2017-09-30","2018-02-11","2018-02-24","2018-04-28","2018-09-29","2018-10-07",
+"2019-09-29",
+"2019-10-12",
+    "2018-12-29",
+    "2019-02-02",
+    "2019-02-03"
+  
+  
+  
+  ];//0天
+  var ary5=["2017-10-04","2018-02-17","2018-10-02",
+    "2019-02-06",
+    "2019-10-03"
+  
+  ];//5天
+  var ary6=["2017-10-03","2018-02-16","2018-10-01",
+    "2019-02-05",
+    "2019-10-02"
+  
+  
+  
+  ];//6天
+  var ary7=["2017-10-02","2018-02-15","2018-09-30",
+    "2019-02-04",
+    "2019-10-01"
+  
+  ];//7天
+  var ary8=["2017-10-01","2018-09-29"];//8天
+  var ary9=["2017-10-05","2018-02-18","2018-10-03",
+    "2019-02-07",
+    "2019-10-04"
+  
+  ];//4天
+  var bigAry=ary1.concat(ary2,ary3,ary4,ary5,ary6,ary7,ary8,ary9);
+
+  var t2=ary1.length+ary2.length;
+  var t3=ary1.length+ary2.length+ary3.length;
+  var t4=ary1.length+ary2.length+ary3.length+ary4.length;
+  var t5=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length;
+  var t6=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length+ary6.length;
+   var t7=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length+ary6.length+ary7.length;
+   var getd=new Date(date_end).getDay();
+   var bigStr=bigAry.join(",");
+    var week2=this.weekday(this.data.date2);
+    this.setData({week2:week2});
+  if(this.data.className==true){
+    if(bigStr.indexOf(date_end)==-1){
+     if(getd==0){
+      this.setData({id4:"1"});
+     }else if(getd==6){
+       this.setData({id4:"2"});
+     }else{
+       this.setData({id4:"0"});
+     }
+    }
+    for(var i=0;i<bigAry.length;i++){
+        if(date_end==bigAry[i]){
+          
+           if(i<ary1.length){
+                this.setData({id4:"3"});
+           }else if(ary1.length<=i&&i<t2){
+               
+                this.setData({id4:"2"});
+           }else if(t2<=i&&i<t3){
+                 this.setData({id4:"1"});
+           }else if(t3<=i&&i<t4){
+               
+              this.setData({id4:"0"});
+           }else if(t4<=i&&i<t5){
+             this.setData({id4:"5"});
+           }else if(t5<=i&&i<t6){
+             this.setData({id4:"6"});
+           }else if(t6<=i&&i<t7){
+             this.setData({id4:"7"});
+           }else if(t7<=i&&i<bigAry.length-ary9.length){
+             this.setData({id4:"8"});
+           }else if(bigAry.length-ary9.length<=i&&i<bigAry.length){
+             this.setData({id4:"4"});
+           }else{
+               
+           }
+         }
+       
+    }
+   }
+  else if(this.data.className2==true){
+     if(bigStr.indexOf(date_end)==-1){
+     if(getd==0){
+      this.setData({id4:"4"});
+     }else if(getd==6){
+       this.setData({id4:"5"});
+     }else{
+       this.setData({id4:"3"});
+     }
+    }
+    for(var i=0;i<bigAry.length;i++){
+        if(date_end==bigAry[i]){
+//           console.log(i);
+           if(i<ary1.length){
+                this.setData({id4:"6"});
+           }else if(ary1.length<=i&&i<t2){
+               
+                this.setData({id4:"5"});
+           }else if(t2<=i&&i<t3){
+                 this.setData({id4:"4"});
+           }else if(t3<=i&&i<t4){
+               
+              this.setData({id4:"3"});
+           }else if(t4<=i&&i<t5){
+             this.setData({id4:"8"});
+           }else if(t5<=i&&i<t6){
+             this.setData({id4:"9"});
+           }else if(t6<=i&&i<t7){
+             this.setData({id4:"10"});
+           }else if(t7<=i&&i<bigAry.length-ary9.length){
+             this.setData({id4:"11"});
+           }else if(bigAry.length-ary9.length<=i&&i<bigAry.length){
+             this.setData({id4:"7"});
+            
+           }else{
+               
+           }
+         }
+       
+    }
+     
+   }
+   
+   },  
+   cancel: function(){
+        this.setData({
+             hidden: true
+        });
+    },
+    confirm: function(){
+  
+         this.setData({
+             hidden: true
+        });   
+//        console.log("clicked confirm");
+    },
+  blurVal:function(event){
+
+        if(event.target.id=="id1"){
+           this.setData({id1:event.detail.value});
+        }
+        else if(event.target.id=="id4"){
+           this.setData({id4:event.detail.value});
+        
+        }else{
+          this.setData({id5:event.detail.value});
+        }
+        
+   
+  },
+  bindKeyInput:function(event){
+    if(event.target.id=="id3"){
+      this.setData({id3:event.detail.value});
+      var num2=Number(this.data.id3)/1.2;
+          this.setData({disabled2:false});
+         // this.setData({disabled:false});
+         if(num2==Number(this.data.id2)){
+            this.setData({id2:event.detail.value});
+         }else{
+           this.setData({id2:num2.toFixed(5)});
+//           console.log(num2);
+         }
+    
+   /*  this.setData({disabled:false});
+    //this.setData({disabled2:false});
+   var num1=Number(this.data.id2)*1.2;
+   var num=num1.toFixed(5);
+   if(num1==Number(this.data.id3)){
+        this.setData({id3:event.detail.value});
+      }else{
+            this.setData({id3:num});
+     }
+*/
+    }else if(event.target.id=="id2"){
+     this.setData({id2:event.detail.value});
+      var num1=Number(this.data.id2)*1.2;
+           var num=num1.toFixed(5);
+           if(num1==Number(this.data.id3)){
+            // this.setData({id3:event.detail.value});
+           }else{
+            this.setData({id3:num});
+            }
+     //this.setData({tu:event.detail.value});
+     /*console.log(event.detail.value);
+       var num2=Number(this.data.id3)/1.2;
+          this.setData({disabled2:false});
+         // this.setData({disabled:false});
+         if(num2==Number(this.data.id2)){
+            this.setData({id2:event.detail.value});
+         }else{
+           this.setData({id2:num2.toFixed(5)});
+//           console.log(num2);
+         }*/
+    }
+    
+  },
+  keyUp:function(){
+//    console.log("12323");
+     var currKey=0,e=e||event;   
+    currKey=e.keyCode||e.which||e.charCode;   
+    var keyName = String.fromCharCode(currKey);   
+//   console.log("按键码: " + currKey + " 字符: " + keyName);
+  },
+   clearUp: function() {
+     this.setData({id1:""});
+     this.setData({id2:""});
+     this.setData({id3:""});
+     this.setData({id4:""});
+     //this.setData({date1:"请输入日期"});
+     //this.setData({date2:"请输入日期"});
+     this.setData({id5:""});
+     this.setData({days:"0"});
+     this.setData({perTen:""});
+     this.setData({charges:""});
+     this.setData({money:""});
+      this.setData({disabled2:false});
+      this.setData({disabled:false});
+  },
+  calculate:function(){
+
+   
+    //计息天数
+   var days1;
+     if(this.data.id4==""){
+        days1=0;
+     }else{
+       days1=this.data.id4;
+     }
+   
+   var time1 = (this.data.date1+' 00:00:00').toString();
+   var timestamp1=new Date(Date.parse(time1.replace(/-/g,"/"))).getTime();
+   var time2 = (this.data.date2+' 00:00:00').toString();
+   var timestamp2=new Date(Date.parse(time2.replace(/-/g,"/"))).getTime();
+   var days2=Number((timestamp2-timestamp1)/(24 * 60 * 60 * 1000));
+   var days=Number(days1)+days2;
+    this.setData({days:days});
+
+    //每十万手续费
+    var perAmount;
+    if(this.data.id5==""){
+       perAmount=0;
+     }else{
+       perAmount=Number(this.data.id5);
+     }
+//     console.log(perAmount);
+     //计算贴现利息：
+     var charges1=(100000*days*Number(this.data.id3))/36000+perAmount;
+     var charges2=charges1*Number(this.data.id1)/10;
+     var charges=charges2.toFixed(2);
+
+     this.setData({charges:charges});
+     //计算贴现金额：
+     var amount=Number(this.data.id1)*10000-charges;
+     var money=amount.toFixed(2);
+     this.setData({money:money});
+
+      //计算每十万贴息：
+    var perTen=(10*days*Number(this.data.id3))/3.6  +perAmount;
+    this.setData({perTen:perTen.toFixed(2)});
+     
+     //如果输入的数据不全
+     /*if(this.data.id1==""||this.data.id2==""||this.data.id3==""||this.data.days==""||days2<0){
+       this.setData({days:"0"});
+        this.setData({perTen:"0"});
+        this.setData({money:"0"});
+        this.setData({charges:"0"});
+        this.setData({
+             hidden: false
+        })
+       this.setData({
+             mtitle:"信息有误"
+        })
+     this.setData({content:"您输入的内容有误，请检查后输入"});
+     }*/
+  },
+  changeLv:function(){
+     //计息天数
+   var days1;
+     if(this.data.id4==""){
+        days1=0;
+     }else{
+       days1=this.data.id4;
+     }
+   
+   var time1 = (this.data.date1+' 00:00:00').toString();
+   var timestamp1=new Date(Date.parse(time1.replace(/-/g,"/"))).getTime();
+   var time2 = (this.data.date2+' 00:00:00').toString();
+   var timestamp2=new Date(Date.parse(time2.replace(/-/g,"/"))).getTime();
+   var days2=Number((timestamp2-timestamp1)/(24 * 60 * 60 * 1000));
+   var days=Number(days1)+days2;
+    this.setData({days:days});
+
+    //每十万手续费
+    var perAmount;
+    if(this.data.id5==""){
+       perAmount=0;
+     }else{
+       perAmount=Number(this.data.id5);
+     }
+//     console.log(perAmount);
+   
+    this.setData({
+             hidden: false
+        })
+       this.setData({
+             mtitle:"转换利率"
+        })
+    var newMonth1=perAmount/days*0.3+Number(this.data.id2);
+    var newMonth=newMonth1.toFixed(6)
+//    console.log(newMonth);
+    var newYear=(newMonth*1.2).toFixed(6);
+     this.setData({content:"票面金额："+this.data.id1+"万元 "+"\n 月利率（‰）："+newMonth+" \n 年利率（‰）:"+newYear});
+  },
+  color:function(event){
+  //console.log(event);
+  
+  var ary1=["2017-04-02","2017-04-29","2017-05-28","2017-10-06","2017-12-30","2018-02-19","2018-04-05","2018-04-29","2018-06-16","2018-09-22","2018-10-04"];
+  var ary2=["2017-04-03","2017-04-30","2017-05-29","2017-10-07","2017-12-31","2018-02-30","2018-04-06","2018-04-30","2018-06-17","2018-09-23","2018-10-05"];
+  var ary3=["2017-04-04","2017-05-01","2017-05-30","2017-10-08","2018-01-01","2018-02-21","2018-05-01","2018-06-18","2018-09-24","2018-10-06"];  //1天
+  var ary4=["2017-04-01","2017-05-27","2017-09-30","2018-02-11","2018-02-24","2018-04-28","2018-09-29","2018-10-07"];
+  var ary5=["2017-10-04","2018-02-17","2018-10-02"];
+  var ary6=["2017-10-03","2018-02-16","2018-10-01"];
+  var ary7=["2017-10-02","2018-02-15","2018-09-30"];
+  var ary8=["2017-10-01"];
+  var ary9=["2017-10-05","2018-02-18","2018-10-03"];//4天
+  var bigAry=ary1.concat(ary2,ary3,ary4,ary5,ary6,ary7,ary8,ary9);
+///  console.log(bigAry);
+  var t2=ary1.length+ary2.length;
+  var t3=ary1.length+ary2.length+ary3.length;
+  var t4=ary1.length+ary2.length+ary3.length+ary4.length;
+  var t5=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length;
+  var t6=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length+ary6.length;
+  var t7=ary1.length+ary2.length+ary3.length+ary4.length+ary5.length+ary6.length+ary7.length;
+   
+  
+   var bigStr=bigAry.join(",");
+   if(event.currentTarget.id=="electric"){
+
+     this.setData({id4:"0"});
+    this.setData({className:true});
+    this.setData({className2:false});
+    this.initdate();
+    //周六日判断
+
+    /*  var myDate = new Date(); 
+      var year=myDate.getFullYear();
+       var year1=myDate.getFullYear()+1;
+	   var mon=myDate.getMonth()+1;
+      var month=zero(mon);
+      var mon2=myDate.getMonth()+7;
+     var month2=zero(mon2);
+   	var da=myDate.getDate();
+     var day=zero(da);
+	  
+     function zero(n){
+         if(n<10){
+             var t="0"+n;
+             return t;
+         }
+     }
+     var daystr=year+"-"+month+"-"+day;
+
+    if(this.data.date1==daystr){
+    var str1=year1+"-"+month+"-"+day;
+     console.log(str1);
+        this.setData({date2:str1});
+    }
+
+   var date_end=this.data.date2;
+   var getd=new Date(date_end).getDay();
+
+ if(bigStr.indexOf(date_end)==-1){
+     if(getd==0){
+      this.setData({id4:"1"});
+     }else if(getd==6){
+       this.setData({id4:"2"});
+     }
+    }
+    for(var i=0;i<bigAry.length;i++){
+        if(date_end==bigAry[i]){
+           console.log(i);
+           if(i<ary1.length){
+                this.setData({id4:"3"});
+           }else if(ary1.length<=i&&i<t2){
+               
+                this.setData({id4:"2"});
+           }else if(t2<=i&&i<t3){
+                 this.setData({id4:"1"});
+           }else if(t3<=i&&i<t4){
+               
+              this.setData({id4:"0"});
+           }else if(t4<=i&&i<t5){
+             this.setData({id4:"5"});
+           }else if(t5<=i&&i<t6){
+             this.setData({id4:"6"});
+           }else if(t6<=i&&i<t7){
+             this.setData({id4:"7"});
+           }else if(t7<=i&&i<bigAry.length-ary9.length){
+             this.setData({id4:"8"});
+           }else if(bigAry.length-ary9.length<=i&&i<bigAry.length){
+             this.setData({id4:"4"});
+             console.log(98080);
+           }else{
+               
+           }
+         }
+       
+    }*/
+   
+   }else if(event.currentTarget.id=="paper"){
+     //周六日判断
+    this.setData({id4:"3"});
+   this.setData({className:false});
+   this.setData({className2:true});
+   this.initdate();
+   /*console.log(this.data.date1);
+  
+      var myDate = new Date(); 
+      var year=myDate.getFullYear();
+	   var mon=myDate.getMonth()+1;
+      var month=zero(mon);
+      var mon2=myDate.getMonth()+7;
+     var month2=zero(mon2);
+   	var da=myDate.getDate();
+     var day=zero(da);
+	   console.log(year,month,day);
+     function zero(n){
+         if(n<10){
+             var t="0"+n;
+             return t;
+         }
+     }
+     var daystr=year+"-"+month+"-"+day;
+   
+  if(this.data.date1==daystr){
+    var str2=year+"-"+month2+"-"+day;
+        this.setData({date2:str2});
+  }
+   var date_end=this.data.date2;
+   var getd=new Date(date_end).getDay();
+
+     if(bigStr.indexOf(date_end)==-1){
+     if(getd==0){
+      this.setData({id4:"4"});
+     }else if(getd==6){
+       this.setData({id4:"5"});
+     }
+    }
+    for(var i=0;i<bigAry.length;i++){
+        if(date_end==bigAry[i]){
+           console.log(i);
+           if(i<ary1.length){
+                this.setData({id4:"6"});
+           }else if(ary1.length<=i&&i<t2){
+               
+                this.setData({id4:"5"});
+           }else if(t2<=i&&i<t3){
+                 this.setData({id4:"4"});
+           }else if(t3<=i&&i<t4){
+               
+              this.setData({id4:"3"});
+           }else if(t4<=i&&i<t5){
+             this.setData({id4:"8"});
+           }else if(t5<=i&&i<t6){
+             this.setData({id4:"9"});
+           }else if(t6<=i&&i<t7){
+             this.setData({id4:"10"});
+           }else if(t7<=i&&i<bigAry.length-ary9.length){
+             this.setData({id4:"11"});
+           }else if(bigAry.length-ary9.length<=i&&i<bigAry.length){
+             this.setData({id4:"7"});
+              console.log(7777777);
+           }else{
+               
+           }
+         }
+       
+    }*/
+   }
+  },
+  initdate:function(){
+    var myDate = new Date(); 
+    var year=myDate.getFullYear();
+    var year2=myDate.getFullYear()+1;
+	   var mon=myDate.getMonth()+1;
+    var month=zero(mon);
+     var mon2=myDate.getMonth()+7;
+     var month2=zero(mon2);
+   	var da=myDate.getDate();
+//     console.log(da);
+     var day=zero(da);
+//	   console.log(year,month,day);
+     function zero(n){
+         if(n<10){
+             var t="0"+n;
+             return t;
+         }else{
+           return n;
+         }
+     }
+     var daystr1;
+     var daystr2;
+     var daystr=year+"-"+month+"-"+day;
+    this.setData({date1:daystr});
+    var week=this.weekday(this.data.date1);
+    this.setData({week1:week});
+     if(this.data.className==true){
+//      console.log("1");
+       this.setData({id4:"0"});
+      var daystr1=year2+"-"+month+"-"+day;
+      this.setData({date2:daystr1});
+      var week2=this.weekday(this.data.date2);
+       this.setData({week2:week2});
+     }else if(this.data.className2==true){
+//        console.log("2");
+        var daystr2=year+"-"+month2+"-"+day;
+        if(month2>12){
+          month2=month2-12;
+           var daystr2=year2+"-"+month2+"-"+day;
+        }
+        this.setData({date2:daystr2});
+         this.setData({id4:"3"});
+       var week2=this.weekday(this.data.date2);
+       this.setData({week2:week2});
+     }
+     // var daystr2=year+"-"+month2+"-"+day;
+     // console.log(daystr2);
+  },
+  clickButton:function(e){
+ 
+    wx.setStorageSync('perTen', this.data.perTen);
+    wx.navigateTo({
+      url: 'calor/calor'
+    })
+  },
+clickButton1:function(e){
+ 
+    wx.setStorageSync('perTen', this.data.money);
+    wx.navigateTo({
+      url: 'calor/calor'
+    })
+  },
+listenerPerTenInput : function(e){
+     this.data.perTen = e.detail.value;
+  },
+
+  listenerMoneyInput : function(e){
+     this.data.money = e.detail.value;
+  },
+
+})

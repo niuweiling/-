@@ -1,0 +1,40 @@
+/* pages/shouye/nopmxq/nopmxq.wxss */
+.img-sell{
+  display: block;
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 0rpx;
+}
+page{
+  background: #fff;
+}
+.img{
+  width: 100%;
+}
+.xian{
+  width: 100%;
+  height: 1px;
+  background: #e6e6e6;
+  margin-top: 20rpx;
+}
+.content{
+  padding: 20rpx;
+  position: relative;
+}
+.content text{
+  display: block;
+  font-size: 24rpx;
+  color: #757375;
+}
+.btn{
+  background: #8797ED;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  margin-top: 40rpx;
+}

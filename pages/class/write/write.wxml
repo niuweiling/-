@@ -1,0 +1,15 @@
+<!--pages/class/write/write.wxml-->
+<view class="score">
+  <image src="../../images/greystar.png" wx:for="{{ stars }}" wx:key="unique" data-pos="{{index}}" bindtap="starclick"></image>
+  <view class="star" style='width:{{width}}rpx'>
+       <image  wx:for="{{ activestars}}" wx:key=""  src="../../images/star.png" data-pos="{{index}}" bindtap="starclick">
+  </image>
+  </view>
+</view>
+<view class="writebox">
+     <form bindsubmit='save'>
+         <textarea placeholder='喜欢这个音频吗？评价一下吧' bindinput='write' disabled='{{able}}' maxlength='140'></textarea>
+         <view class="wordnum">{{word}}/140</view>
+         <view class="comment"><checkbox checked='{{checked}}'></checkbox>匿名评价 <button class="right" form-type='submit'>提交评价</button></view>
+    </form>
+</view>

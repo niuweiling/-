@@ -1,0 +1,73 @@
+/* pages/shouye/xjsd/xjsd.wxss */
+.content{
+  width: 100%;
+  background: #fff;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box
+}
+.list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: solid 1px #e6e6e6;
+}
+.x1{
+  font-size: 28rpx;
+  color: #101010;
+}
+.radio{
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #101010;
+  margin-left: 60rpx;
+  overflow: hidden
+}
+radio-group .radio:last-child{
+  margin-left: 180rpx;
+}
+.section{
+   width: 75%;
+}
+.apply-next{
+  width: 10rpx;
+  height: 20rpx;
+  margin-top: 30rpx
+}
+.change{
+  margin-left: 35rpx;
+  font-size: 28rpx;
+  color: #888888;
+}
+.input{
+  width: 70%;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-top: 15rpx;
+  margin-left: 60rpx
+}
+.x2{
+  font-size: 28rpx;
+  color: #101010;
+}
+.date{
+  width: 75%;
+  margin-left: 30rpx;
+}
+.date-text{
+  font-size: 28rpx;
+  color: #888888;
+  margin-left: 30rpx;
+}
+.bottom{
+   padding: 0 20rpx;
+   box-sizing: border-box;
+   margin-top: 70rpx;
+}
+button{
+  width: 100%;
+  background: #8797ED;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+}

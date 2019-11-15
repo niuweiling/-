@@ -1,0 +1,40 @@
+<view class="top flex">
+  <view bindtap='bindbutton' data-name='souc'><text class='{{cur1}}'>收藏</text></view>
+  <view bindtap='bindbutton' data-name='liul'><text class='{{cur2}}'>浏览</text></view>
+  <view bindtap='bindbutton' data-name='dianz'><text class='{{cur3}}'>点赞</text></view>
+</view>
+<view class='content'>
+  <!-- 1 -->
+  <view class='list'  wx:for="{{cardList}}" wx:for-item="card">
+    <view class='list-top flex'>
+      <view class='left'>
+        <view>
+          <text id='one'>{{card.name}}</text>
+          <text>{{card.duties}}</text>
+        </view>
+        <view>主营业务：{{card.business}}</view>
+        <view>手机号：{{card.phone}}</view>
+        <view>公司：{{card.company}}</view>
+        <view>地址：{{card.address}}</view>
+      </view>
+      <view class='right'>
+        <block wx:if="{{card.fileUrl == ''}}">
+          <image src='../../images/tx.png' class='img'></image>
+        </block>
+        <block wx:else>
+          <image src='{{card.fileUrl}}' class='img'></image>
+        </block>
+         
+      </view>
+    </view>
+    <view class='list-bottom flex' bindtap='calling' data-phone='{{card.phone}}'>
+        <image src='../../images/my_07.png' class='phone'></image>
+        <view>打电话</view>
+    </view>
+  </view>
+ 
+</view>
+
+
+
+<view class='h10' hidden="{{isinfomation}}">暂无数据</view>

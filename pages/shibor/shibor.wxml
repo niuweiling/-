@@ -1,0 +1,28 @@
+<!--pages/shibor/shibor.wxml-->
+<view class="container">
+  <view class="row fb">
+    <text>期限</text>
+    <text>Shibor</text>
+    <text></text>
+    <text>涨跌（BP）</text>
+  </view>
+ <view wx:for="{{ss}}" wx:key="i">
+   <view class="row colorG">
+     <text>{{item.shiborName}}</text>
+     <text>{{item.shibor}}</text>
+     <view wx:if="{{item.shiborStatus=='+' }}">
+      <image src="../images/greenarrow.png"></image>
+     </view>
+     <view wx:elif="{{item.shiborStatus=='-'}}">
+      <image src="../images/pinkarrow.png"></image>
+     </view>
+
+    <text>{{item.shiborChange}}</text>
+   </view>
+  
+  </view>
+  
+  
+  
+ 
+</view>

@@ -1,0 +1,32 @@
+<view class="content">
+  <view class='top'>
+    <text class='a1'>头像</text>
+    <image src='../../images/my_06.png' class='fr img'></image>
+  </view>
+  <view class='list'>
+    <text class='a1'>姓名</text>
+    <text class='a2'>张三</text>
+  </view>
+  <view class='list'>
+    <text class='a1'>联系方式</text>
+    <text class='a2'>15321099393</text>
+  </view>
+  <view class='list'>
+    <text class='a1'>职务</text>
+    <text class='a2'>业务经理</text>
+  </view>
+  <view class='list'>
+    <text class='a1'>公司</text>
+    <text class='a2'>乐享投融（北京）网络科技有限公司</text>
+  </view>
+  <view class='list'>
+    <text class='a1'>办公地址</text>
+    <text class='a2'>北京市东四环中路82号金长安大厦C座2710</text>
+  </view>
+  <view class='bottom flex'>
+    <text class='a1 a3'>业务介绍</text>
+    <text class='a2 a4'>商票，电票，融资票票，电票，融资票票，电票，融资票票，电票，融资票票，电票，融资票票，电票，融资票票，电票，融资票票，电票，融资票</text>
+    <view class='clear'></view>
+  </view>
+</view>
+<button class='btn' bindtap='mybj'>编辑</button>

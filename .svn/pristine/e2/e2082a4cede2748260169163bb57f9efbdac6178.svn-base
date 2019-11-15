@@ -1,0 +1,77 @@
+<!-- <view class='foot-fixed flex'>
+  <view class='li'>
+    <image src='../images/index_06.png' class='li-img1'></image>
+    <text id='li-text'>首页</text>
+  </view>
+  <view class='li' bindtap='bintool'>
+    <image src='../images/index_09.png' class='li-img1'></image>
+    <text>工具</text>
+  </view>
+  <view class='li' bindtap='binme'>
+    <image src='../images/index_11.png' class='li-img1'></image>
+    <text>我的</text>
+  </view>
+</view> -->
+
+<!-- 正在识别 -->
+<view class="hide{{showView1?'show':''}} mask" >
+  <view class='shibie'>
+    <text class='h12'>{{time}}%</text>
+    <text class='h13'>正在识别</text>
+  </view>
+  <view class='close'>
+    <image src='../images/hpsc_01.png' bindtap='close' class='close-img'></image>
+  </view>
+</view>
+<view class='content'>
+  <view class='search' bindtap='search'>
+    <image src='../images/index_01.png' class='icon-search'></image>
+    请输入查询企业关键词
+  </view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{color}}">
+    <block wx:for="{{imgUrls}}" wx:key="">
+      <swiper-item>
+        <image src="https://www.cpiaoju.com/{{item.img_url}}" data-url="{{item.url}}" class="slide-image" bindtap='forward'/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 导航 -->
+  <view class="btn-area">
+    <view bindtap="tapcal">
+      <image src='../images/index_02.png' class='icon-nav'></image>
+      贴现计算
+    </view>
+    <view bindtap="tapapply">
+      <image src='../images/index_03.png' class='icon-nav'></image>
+      授信申请
+    </view>
+    <view bindtap="taphpsc">
+      <image src='../images/index_04.png' class='icon-nav'></image>
+      汇票收藏
+    </view>
+    <view bindtap="tapclass">
+      <image src='../images/index_14.png' class='icon-nav'></image>
+     票据课堂
+    </view>
+  </view>
+</view>
+<view class='i2'></view>
+<view class='content'>
+  <view class='i1'>
+    一键询价
+  </view>
+  <view class='i3'>
+    上传票面智能匹配报价
+  </view> 
+  <view class='circle'>
+    <view class='one'></view>
+    <view class='two'></view>
+    <image src="../images/index_05.png" class="{{showView?'show':''}} icon-shibie" bindtap="onChangeShowState"></image> 
+  </view> 
+</view>
+
+
+
+

@@ -1,0 +1,518 @@
+<!-- 2016 -->
+<view class='details-jg'>
+  <view class="jg-top" bindtap="clickPerson">
+    <text class='d4'>2016</text>
+    <image src='../../images/apply_02.png' class="{{selectArea ? 'rotateRight' :''}} fr d5"></image>
+  </view>
+  <!-- 隐藏内容 -->
+  <view class="jg-content" hidden="{{selectPerson}}">
+    <view class='jbxx'>
+      <view class='jbxx1'>基本信息</view>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>注册号</text>
+          <text class='jbxx2'>110000016449645</text>
+          <text class='jbxx1'>企业联系电话</text>
+          <text class='jbxx2'>010-65879800</text>
+          <text class='jbxx1'>电子邮箱</text>
+          <text class='jbxx2'>begfc@begfc.com</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>企业名称</text>
+          <text class='jbxx2'>北京控股财务有限公司</text>
+          <text class='jbxx1'>邮政编码</text>
+          <text class='jbxx2'>100026</text>
+          <text class='jbxx1'>企业经营状态</text>
+          <text class='jbxx2'>开业</text>
+        </view>
+      </view>
+      <view class='jbxx1'>企业通信地址</view>
+      <view class='jbxx2'>北京市朝阳区东三环北路38号院4楼10层</view>
+      <view class='jbxx1'>有限责任公司本年度是否发生股东股权转让</view>
+      <view class='jbxx2'>否</view>
+      <view class='jbxx1'>企业是否有投资信息或购买其他公司股权</view>
+      <view class='jbxx2'>-------</view>
+    </view>
+    <view class='jbxx'>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>是否有网站或网店</text>
+          <view class='jbxx2'>否</view>
+        </view>
+        <view class='one-list'>
+          <view class='jbxx1 a2'>从业人数</view>
+          <view>33人</view>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <view class='jbxx1'>网站或网店信息</view>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东（发起人）及出资信息</text>
+      <text class='jbxx3'>北京燕京啤酒股份有限公司</text>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>北京控股集团有限公司</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>对外投资信息</text>
+      <text class='jbxx2'>暂无信息</text>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东股权转让</text>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>企业资产状况信息</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入中主营业务收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>所有者权益合计</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>利润总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>净利润</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>负债总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 隐藏内容结束 -->
+</view>
+<!-- 2015 -->
+<view class='details-jg'>
+  <view class="jg-top" bindtap="clickPerson1">
+    <text class='d4'>2015</text>
+    <image src='../../images/apply_02.png' class="{{selectArea1 ? 'rotateRight' :''}} fr d5"></image>
+  </view>
+  <!-- 隐藏内容 -->
+  <view class="jg-content" hidden="{{selectPerson1}}">
+    <view class='jbxx'>
+      <view class='jbxx1'>基本信息</view>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>注册号</text>
+          <text class='jbxx2'>110000016449645</text>
+          <text class='jbxx1'>企业联系电话</text>
+          <text class='jbxx2'>010-65879800</text>
+          <text class='jbxx1'>电子邮箱</text>
+          <text class='jbxx2'>begfc@begfc.com</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>企业名称</text>
+          <text class='jbxx2'>北京控股财务有限公司</text>
+          <text class='jbxx1'>邮政编码</text>
+          <text class='jbxx2'>100026</text>
+          <text class='jbxx1'>企业经营状态</text>
+          <text class='jbxx2'>开业</text>
+        </view>
+      </view>
+      <view class='jbxx1'>企业通信地址</view>
+      <view class='jbxx2'>北京市朝阳区东三环北路38号院4楼10层</view>
+      <view class='jbxx1'>有限责任公司本年度是否发生股东股权转让</view>
+      <view class='jbxx2'>否</view>
+      <view class='jbxx1'>企业是否有投资信息或购买其他公司股权</view>
+      <view class='jbxx2'>-------</view>
+    </view>
+    <view class='jbxx'>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>是否有网站或网店</text>
+          <view class='jbxx2'>否</view>
+        </view>
+        <view class='one-list'>
+          <view class='jbxx1 a2'>从业人数</view>
+          <view>33人</view>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <view class='jbxx1'>网站或网店信息</view>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东（发起人）及出资信息</text>
+      <text class='jbxx3'>北京燕京啤酒股份有限公司</text>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>北京控股集团有限公司</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>对外投资信息</text>
+      <text class='jbxx2'>暂无信息</text>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东股权转让</text>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>企业资产状况信息</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入中主营业务收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>所有者权益合计</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>利润总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>净利润</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>负债总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 隐藏内容结束 -->
+</view>
+<!-- 2014 -->
+<view class='details-jg'>
+  <view class="jg-top" bindtap="clickPerson2">
+    <text class='d4'>2014</text>
+    <image src='../../images/apply_02.png' class="{{selectArea2 ? 'rotateRight' :''}} fr d5"></image>
+  </view>
+  <!-- 隐藏内容 -->
+  <view class="jg-content" hidden="{{selectPerson2}}">
+    <view class='jbxx'>
+      <view class='jbxx1'>基本信息</view>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>注册号</text>
+          <text class='jbxx2'>110000016449645</text>
+          <text class='jbxx1'>企业联系电话</text>
+          <text class='jbxx2'>010-65879800</text>
+          <text class='jbxx1'>电子邮箱</text>
+          <text class='jbxx2'>begfc@begfc.com</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>企业名称</text>
+          <text class='jbxx2'>北京控股财务有限公司</text>
+          <text class='jbxx1'>邮政编码</text>
+          <text class='jbxx2'>100026</text>
+          <text class='jbxx1'>企业经营状态</text>
+          <text class='jbxx2'>开业</text>
+        </view>
+      </view>
+      <view class='jbxx1'>企业通信地址</view>
+      <view class='jbxx2'>北京市朝阳区东三环北路38号院4楼10层</view>
+      <view class='jbxx1'>有限责任公司本年度是否发生股东股权转让</view>
+      <view class='jbxx2'>否</view>
+      <view class='jbxx1'>企业是否有投资信息或购买其他公司股权</view>
+      <view class='jbxx2'>-------</view>
+    </view>
+    <view class='jbxx'>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>是否有网站或网店</text>
+          <view class='jbxx2'>否</view>
+        </view>
+        <view class='one-list'>
+          <view class='jbxx1 a2'>从业人数</view>
+          <view>33人</view>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <view class='jbxx1'>网站或网店信息</view>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东（发起人）及出资信息</text>
+      <text class='jbxx3'>北京燕京啤酒股份有限公司</text>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>北京控股集团有限公司</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>对外投资信息</text>
+      <text class='jbxx2'>暂无信息</text>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东股权转让</text>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>企业资产状况信息</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入中主营业务收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>所有者权益合计</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>利润总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>净利润</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>负债总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 2013 -->
+<view class='details-jg'>
+  <view class="jg-top" bindtap="clickPerson3">
+    <text class='d4'>2013</text>
+    <image src='../../images/apply_02.png' class="{{selectArea3 ? 'rotateRight' :''}} fr d5"></image>
+  </view>
+  <!-- 隐藏内容 -->
+  <view class="jg-content" hidden="{{selectPerson3}}">
+    <view class='jbxx'>
+      <view class='jbxx1'>基本信息</view>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>注册号</text>
+          <text class='jbxx2'>110000016449645</text>
+          <text class='jbxx1'>企业联系电话</text>
+          <text class='jbxx2'>010-65879800</text>
+          <text class='jbxx1'>电子邮箱</text>
+          <text class='jbxx2'>begfc@begfc.com</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>企业名称</text>
+          <text class='jbxx2'>北京控股财务有限公司</text>
+          <text class='jbxx1'>邮政编码</text>
+          <text class='jbxx2'>100026</text>
+          <text class='jbxx1'>企业经营状态</text>
+          <text class='jbxx2'>开业</text>
+        </view>
+      </view>
+      <view class='jbxx1'>企业通信地址</view>
+      <view class='jbxx2'>北京市朝阳区东三环北路38号院4楼10层</view>
+      <view class='jbxx1'>有限责任公司本年度是否发生股东股权转让</view>
+      <view class='jbxx2'>否</view>
+      <view class='jbxx1'>企业是否有投资信息或购买其他公司股权</view>
+      <view class='jbxx2'>-------</view>
+    </view>
+    <view class='jbxx'>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>是否有网站或网店</text>
+          <view class='jbxx2'>否</view>
+        </view>
+        <view class='one-list'>
+          <view class='jbxx1 a2'>从业人数</view>
+          <view>33人</view>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <view class='jbxx1'>网站或网店信息</view>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东（发起人）及出资信息</text>
+      <text class='jbxx3'>北京燕京啤酒股份有限公司</text>
+      <view class='flex one a1'>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1 a2'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>16000万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>北京控股集团有限公司</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>认缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+          <text class='jbxx1'>实缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>认缴出资时间</text>
+          <text class='jbxx2'>2013年06月01日</text>
+          <text class='jbxx1'>实缴出资额(万元)</text>
+          <text class='jbxx2'>32800万元人民币</text>
+          <text class='jbxx1'>实缴出资方式</text>
+          <text class='jbxx2'>货币</text>
+        </view>
+      </view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>对外投资信息</text>
+      <text class='jbxx2'>暂无信息</text>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>股东股权转让</text>
+      <view class='jbxx2'>暂无信息</view>
+    </view>
+    <view class='jbxx'>
+      <text class='jbxx1'>企业资产状况信息</text>
+      <view class='flex one'>
+        <view class='one-list'>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>营业总收入中主营业务收入</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>资产总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+        <view class='one-list'>
+          <text class='jbxx1'>所有者权益合计</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>利润总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>净利润</text>
+          <text class='jbxx2'>企业选择不公示</text>
+          <text class='jbxx1'>负债总额</text>
+          <text class='jbxx2'>企业选择不公示</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

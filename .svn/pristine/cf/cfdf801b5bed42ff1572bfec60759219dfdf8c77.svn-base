@@ -1,0 +1,32 @@
+<image src="{{detail.draft_img_url}}" data-url="{{detail.draft_img_url}}" bindtap='ckpm' class="img"></image>
+
+
+<view class='xian'></view>
+<view class='content'>
+
+  <block  wx:if="{{detail.is_sale == 'Y'}}">
+    <image src='../../images/nopmxq_01.png' class='img-sell'></image>
+  </block>
+
+ 
+  <text>票据号码：{{detail.number}}</text>
+  <text>承兑人全称：{{detail.accept_name}}</text>
+  <text>票据金额：{{detail.amount}}</text>
+  <text>出票日期：{{detail.start_time}}</text>
+  <text>汇票到期日：{{detail.expire_time}}</text>
+  <text>承兑人开户行行号：{{detail.accept_bank_num}}</text>
+  <text>承兑人开户行名称：{{detail.accept_bank_name}}</text>
+  <text>承兑人银行账号：{{detail.accept_num}}</text>
+  <text>出票人全称：{{detail.seller_name}}</text>
+  <text>出票人账号：{{detail.seller_num}}</text>
+  <text>出票人开户银行：{{detail.seller_bank_name}}</text>
+  <text>收款人全称：{{detail.buyer_name}}</text>
+  <text>收款人账号：{{detail.buyer_num}}</text>
+  <text>收款人开户银行：{{detail.buyer_bank_name}}</text>
+  <text>能否转让：{{detail.is_transfer}}</text>
+  <text>票据状态：{{detail.draft_status}}</text>
+  <text>汇票来源：{{detail.source}}</text>
+  <text>汇票联系人：{{detail.contacts}}</text>
+  <text>联系电话：{{detail.phone}}</text>
+</view>
+<button class='btn' bindtap='pmxq'>编辑</button>

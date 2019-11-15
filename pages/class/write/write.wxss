@@ -1,0 +1,68 @@
+/* pages/class/write/write.wxss */
+page{
+  background:#fff;
+}
+.score{
+  width:300rpx;
+  padding:40rpx 0;
+  margin:0 auto;
+  position: relative;
+}
+.score image{
+  width:50rpx;
+  height:50rpx;
+  margin:0 5rpx;
+}
+.star{
+  width:300rpx;
+  height:50rpx;
+  position: absolute;
+  top:40rpx;
+  overflow:hidden;
+}
+.star image{
+  width:50rpx;
+  height:50rpx;
+  margin:0 5rpx;
+}
+.writebox{
+  padding:0 20rpx;
+  margin:40rpx 0;
+  position: relative;
+}
+.writebox textarea{
+   height:220rpx;
+   width:670rpx;
+   background:#f8f8f8;
+   color:#888;
+   line-height:40rpx;
+   padding:10rpx 20rpx;
+   font-size:24rpx;
+   margin-bottom: 40rpx;
+}
+.wordnum{
+   position: absolute;
+   top:200rpx;
+   right:30rpx;
+   font-size:24rpx;
+   color:#716c6c;
+}
+.comment{
+  margin-top:40rpx;
+  font-size:24rpx;
+  color:#716c6c;
+}
+.comment checkbox{
+ transform: scale(0.7,0.7);
+}
+.comment button{
+  float:right;
+  width:300rpx;
+  height:60rpx;
+  line-height:60rpx;
+  border:none;
+  outline:none;
+  font-size:24rpx;
+  background: #96b9f5;
+  color:#fff;
+}

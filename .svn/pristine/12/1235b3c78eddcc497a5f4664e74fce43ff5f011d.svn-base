@@ -1,0 +1,9 @@
+<view class='content'>
+   <view>
+    <input type='text' class='search' placeholder='请输入查询企业关键字'></input>
+    <image src='../../images/index_01.png' class='icon-search'></image>
+  </view>
+  <image src='../../images/nokey_01.png' class='nokey'></image>
+  <text class='nofind'>没找到想要的企业</text>
+  <button class='key-btn' bindtap='apply'>授信申请</button>
+</view>

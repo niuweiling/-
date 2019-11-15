@@ -1,0 +1,214 @@
+/* pages/class/music/music.wxss */
+page{
+  background:#fff;
+}
+.scontainer{
+  padding: 0 40rpx 10rpx;
+  font-size:24rpx;
+  border-bottom:#f8f8f8 solid 6rpx;
+}
+.swiper{
+  width:100%;
+  height:360rpx;
+  margin:40rpx auto;
+  box-shadow: 1px 1px 15px #ccc;
+  border-radius: 10rpx;
+  -webkit-border-radius:10rpx;
+}
+.swiper image{
+  width: 100%;
+  height:100%;
+}
+.introcon{
+  padding: 0 40rpx;
+  margin:40rpx 0;
+  font-size:24rpx;
+  line-height:40rpx;
+}
+.introcon .title{
+  height:60rpx;
+  line-height:60rpx;
+  font-size:28rpx;
+}
+.introcon .introde{
+   display: -webkit-box;
+   height:80rpx;
+   width: 100%;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+  -webkit-line-clamp: 2;
+  
+}
+.playercon{
+    padding:0 20rpx;
+    margin:70rpx 0;
+}
+.player{
+   height:260rpx;
+   border-radius: 10rpx;
+   box-shadow: 1px 1px 15px #ccc;
+}
+.progress{
+  padding:20rpx 10rpx;
+  height:60rpx;
+}
+.progress text{
+  float:left;
+  font-size:24rpx;
+  color:#716c6c;
+  width:10%;
+  overflow: hidden;
+  line-height:80rpx;
+}
+.bar{
+  float:left;
+  height:60rpx;
+  width:70%;
+  margin:20rpx 5%;
+}
+.list{
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:100%;
+  left:0;
+  right:0;
+  z-index:12;
+  background: #fff;
+  animation: mytop .5s 0s linear both;
+}
+@keyframes mytop{
+  0%{
+    top:100%;
+  }
+  100%{
+    top:0%;
+  }
+}
+.options{
+  padding:0 20rpx;
+  height:100rpx;
+  margin:40rpx 0;
+}
+.listicon{
+  float:left;
+  width:60rpx;
+  font-size:24rpx;
+  color:#716c6c;
+}
+.listicon image{
+  width:40rpx;
+  height:40rpx;
+}
+.buttons{
+  float:left;
+  width:500rpx;
+  margin-left:40rpx;
+}
+.buttons .button{
+  width:60rpx;
+  height:60rpx;
+  float:left;
+}
+.buttons .button:nth-child(2){
+  width:100rpx;
+  height:100rpx;
+  margin:-20rpx 120rpx;
+}
+.left{
+  float:left;
+}
+.right{
+  float:right;
+  }
+.broadcast{
+  padding:0 20rpx;
+  height:80rpx;
+  line-height:80rpx;
+  text-align: center;
+  overflow: hidden;
+  font-size:32rpx;
+}
+.broadcast image.left{
+  width:30rpx;
+  height:30rpx;
+  margin:25rpx 0;
+}
+.broadcast image.right{
+  width:36rpx;
+  height:36rpx;
+  margin:22rpx 0;
+}
+.broadcast text{
+  font-size:24rpx;
+  color:#716c6c;
+}
+.list-row{
+  height:102rpx;
+  padding:20rpx 0 20rpx 35rpx;
+  color:#716c6c;
+}
+.list-row .row-left{
+  float:left;
+  width:60rpx;
+  line-height:100rpx;
+  text-align:center;
+  font-size:40rpx;
+  font-family: "Arial";
+  position: relative;
+}
+.list-row .row-left image{
+  width:60rpx;
+  height:60rpx;
+  position: absolute;
+  top:20rpx;
+  left:0;
+  display: none;
+}
+.list-row .row-right{
+  float:left;
+  width:637rpx;
+  margin-left:20rpx;
+  height:120rpx;
+  font-size:24rpx;
+  border-bottom:#d8d8d8 solid 1px;
+}
+.list-row .row-right .row-title{
+  color:#333;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:32rpx;
+}
+.list-row .row-right text{
+  padding: 0 15rpx;
+}
+.active{
+  background:#f9f4d4;
+}
+.active .row-left image{
+  display: block;
+}
+.tabbar{
+  position: fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:95rpx;
+  font-size:24rpx;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top:#d8d8d8 solid 1px;
+  background:#fff;
+  z-index:200;
+}
+.tabbar view{
+  width:80rpx;
+  text-align:center;
+  color:#716c6c;
+}
+.tabbar image{
+    display: block;
+    width:40rpx;
+    height:40rpx;
+    margin:10rpx auto;
+}

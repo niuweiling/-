@@ -1,0 +1,19 @@
+/* pages/my/mygywm/mygywm.wxss */
+page{
+  background: #fff;
+}
+.content{
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #333;
+}
+view{
+  font-size: 28rpx;
+  text-align: justify
+}
+.a1{
+  text-indent: 2em;
+}
+.a2{
+  margin-top: 20rpx;
+}

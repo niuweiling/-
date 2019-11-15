@@ -1,0 +1,16 @@
+<!--pages/news/news.wxml-->
+<view class="{{isIPhoneX?'padX':''}} container" wx:for="{{array}}"  wx:for-item="array"  wx:key="array">
+
+   <view class="news-row"  bindtap='goto' data-url="{{array.interUrl}}" >
+ 
+      <image src='https://www.cpiaoju.com/{{array.attachFile}}'></image>
+    
+      <view>
+         <text class="title">{{array.title}}</text>
+         <view class="wd">{{array.intro}}</view>
+ 
+         <text class="fr font2 colorG">{{array.createTime}}</text>
+      </view>
+   </view>
+   
+</view>

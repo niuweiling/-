@@ -1,0 +1,17 @@
+<view class="container">
+   <view class="row">
+       <text class="v-result">查询结果\n\t</text>
+   </view>
+  
+
+<view class="R_container" wx:for="{{array}}" wx:for-item="array"  wx:key="array">
+       <view>
+          <text>{{array.name}}\n\t</text>
+          <text>支付联行号：{{array.bankNum}}</text>
+       </view>
+</view>
+   
+
+
+
+</view>

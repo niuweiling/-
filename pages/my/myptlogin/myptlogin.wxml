@@ -1,0 +1,13 @@
+<image src="../../images/logo.png" class="logo-icon"></image>
+<image src='../../images/logo-text.png' class='logo-text'></image>
+<view class='list a1'>
+  <input placeholder='手机号'  bindinput="blurphone" value="{{phone}}" type='number' maxlength='11' ></input>
+</view>
+<view class='list a2 flex'>
+  <input placeholder='密码' style="display:{{a2psw}}" password value="{{password}}" maxlength='25' bindinput="blurpsw" ></input>
+  <input placeholder='密码' style="display:{{a2psw2}}" value="{{password}}" maxlength='25' bindinput="blurpsw" ></input>
+  <image src='../../images/logo_01.png' class="password hide{{showView?'show':''}}"  bindtap='eyeclick'></image>
+  <image src='../../images/logo_02.png' class="password hide{{showView?'':'show'}}" bindtap='eyeclick'></image>
+</view>
+<button class='dl' bindtap='login'>登录</button>
+<view class='text' bindtap='wjmm'>忘记密码</view>

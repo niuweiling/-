@@ -1,0 +1,49 @@
+
+<!-- 正在识别 -->
+<view class="hide{{showView1?'show':''}} mask" >
+  <view class='shibie'>
+    <text class='h12'>{{time}}%</text>
+    <text class='h13'>正在识别</text>
+  </view>
+  <view class='close'>
+    <image src='../../images/hpsc_01.png' bindtap='close' class='close-img'></image>
+  </view>
+</view>
+
+
+<view  wx:for="{{priceloglist}}" wx:for-item="pricelog">
+<view class="list">
+  <view class='list-top'>
+    <image src="{{pricelog.thump_url}}" class='img' bindtap='ckpm' data-url='{{pricelog.thump_url}}'></image>
+    <view class='text flex'>
+      <text class=''>汇票类型：</text>
+      <text class=''>
+      <block wx:if="{{pricelog.draft_type == '1'}}">纸银</block>
+      <block wx:if="{{pricelog.draft_type == '2'}}">电银</block>
+      </text>
+    </view>
+    <view class='text flex'>
+      <text class=''>{{pricelog.bank_type}}</text>
+      <!-- <text class='a2'>城商</text> -->
+    </view>
+
+    <block wx:if="{{pricelog.money != '0'}}">
+    <view class='text flex'>
+      <text class=''>{{pricelog.money}}</text>
+      <!-- <text class='a2'>1万</text> -->
+    </view>
+    </block>
+    <view class='text flex'>
+      <text class=''>{{pricelog.days}}</text>
+      <!-- <text class='a2'>61天</text> -->
+    </view>
+  </view>
+  <view class='list-bottom'>
+    <text class='fl'>{{pricelog.add_time}}</text>
+    <button class='fr zcxj' bindtap='againSelectpricelist'  data-id ='{{pricelog.selectprice_id}}'>再次询价</button>
+    <button class='fr jg' bindtap='xjjg' data-id ='{{pricelog.selectprice_id}}'>{{pricelog.count}}家机构</button>
+  </view>
+</view></view>
+
+
+<view class='h10' hidden="{{isinfomation}}">暂无数据</view>

@@ -1,0 +1,14 @@
+<!--pages/danger/danger.wxml-->
+<view class="container">
+   <view class="flex-row margintop50">
+     <input type="number" bindblur='EventHandle' value="{{keyword}}" maxlength='16' placeholder='请输入16位票号' class="v-input"/>
+  </view>
+  <view class="flex-row margintop60">
+    <button  size="{{primarySize}}"  bindtap="getinfor" form-type="submit" class="searchbtn">查询</button>
+  </view>
+   <view class="flex-row tips">
+       <text>提示：\n\t</text>
+       <text>1、提供最近6个月内问题票查询；\n\t</text>
+       <text>2、免责声明：本软件旨在最大化帮助用户避免汇票业风险，本软件未能收录数据而使用遇到风险，与本软件无关，由自己承担；</text>
+  </view>
+</view>

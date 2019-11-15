@@ -1,0 +1,31 @@
+<!--pages/class/record/record.wxml-->
+<view class="container">
+    <view wx:if="{{hasList}}">
+        <view class="cart-box">
+            <view class="row" wx:for="{{carts}}" wx:key="{{index}}">
+               <view wx:if="{{iconshow}}">
+                <icon wx:if="{{item.selected}}" type="success" color="rgb(254,90,0)" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList" size="30"/>
+                <icon wx:else  type="success" class="cart-pro-select" data-index="{{index}}" bindtap="selectList" size="30" color='rgb(204,204,204)'/>
+                </view>
+                <image class="cart-thumb" src="{{item.pic}}"></image>
+                <view class="border" bindtap='golist' data-id="{{item.id}}">
+                     <text class="title">{{item.title}}</text>
+                     <view class="wd">{{item.content}}</view>
+                     <view class="binfor">{{item.totalnum}}集<text>|</text>{{item.listennum}}人收听</view>
+                </view>
+            </view>
+        </view>
+      </view>
+    <view wx:else class="nodata">
+          暂无数据
+    </view>
+    <view class="{{isIPhoneX?'padX':'' }} option">
+         <view wx:if="{{botshow}}" class="tc" bindtap='showdelete'>
+              编辑
+         </view>
+         <view wx:else  class="optbtn">
+                <view bindtap='dele'>删除{{senum}}</view>
+                <view bindtap='cancle'>取消</view>
+         </view>
+    </view>  
+</view>

@@ -1,0 +1,17 @@
+<view class='content'>
+  <view class='list flex'>
+    <text>原始密码</text>
+    <input placeholder='请输入原始密码' bindinput="oldpsw" password maxlength='25' value='{{oldpsw}}'></input>
+  </view>
+  <view class='list flex'>
+    <text>新密码</text>
+    <input placeholder='请输入新密码' bindinput="newpsw1" password maxlength='25' value='{{newpsw1}}'></input>
+  </view>
+  <view class='list flex'>
+    <text>确认新密码</text>
+    <input placeholder='请输入密码' bindinput="newpsw2" password maxlength='25' value='{{newpsw2}}'></input>
+  </view>
+</view>
+<view class='btn'>
+  <button bindtap='updatepassword'>确认修改</button>
+</view>

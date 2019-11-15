@@ -1,0 +1,39 @@
+/* pages/my/myxgmm/myxgmm.wxss */
+.content{
+  background: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 30rpx;
+}
+.list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: solid #e6e6e6 1px;
+}
+.list text{
+  display: block;
+  width: 23%;
+  font-size: 28rpx;
+  color: #4F4D4F
+}
+.list input{
+  width: 70%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.btn{
+  margin-top: 80rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.btn button{
+  background: #8797ED;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border: none;
+}

@@ -1,0 +1,10 @@
+<image src="../../images/pmxq_01.jpg" class="img"></image>
+<view class="hide{{showView1?'show':''}} mask" bindtap='close'>
+  <view class='shibie'>
+    <text class='h12'>97%</text>
+    <text class='h13'>正在识别</text>
+  </view>
+  <view class='close'>
+    <image src='../../images/hpsc_01.png' class='close-img'></image>
+  </view>
+</view>

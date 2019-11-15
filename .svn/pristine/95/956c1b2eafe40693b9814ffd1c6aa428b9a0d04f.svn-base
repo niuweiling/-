@@ -1,0 +1,56 @@
+/* pages/my/myxq/myxq.wxss */
+.content{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.top{
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom: solid #e6e6e6 1px;
+}
+.img{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 18rpx;
+}
+.a1{
+  display: inline-block;
+  width: 18%;
+  font-size: 24rpx;
+  color: #101010;
+}
+.a2{
+  font-size: 24rpx;
+  color: #888888;
+}
+.a3{
+  width: 18%
+}
+.a4{
+  width: 80%;
+  text-align: justify
+}
+.list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: solid #e6e6e6 1px;
+}
+.bottom{
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.btn{
+  background: #8797ED;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 0;
+}

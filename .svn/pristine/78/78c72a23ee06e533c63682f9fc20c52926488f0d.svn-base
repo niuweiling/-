@@ -1,0 +1,4 @@
+<!-- <image src="../../images/pmxq_01.jpg" class="img"></image> -->
+<scroll-view class="img" bindtouchstart="touchstartCallback"  bindtouchmove="touchmoveCallback" bindtouchend="touchendCallback" scroll-x="true"  scroll-y="true" >
+      <image style="zoom:{{stv.scale}};" src="{{url}}"></image>
+  </scroll-view>

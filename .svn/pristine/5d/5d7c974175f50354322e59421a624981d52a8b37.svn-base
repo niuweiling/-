@@ -1,0 +1,33 @@
+/* pages/my/mylogin/mylogin.wxss */
+.yyzh{
+  width: 526rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #8797ED;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 80rpx;
+}
+.wechat{
+  width: 526rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background:#62B900;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 30rpx;
+}
+.text{
+  font-size: 32rpx;
+  color: #888888;
+  text-align: center;
+  margin-top: 76rpx;
+}
+.num{
+  font-size: 28rpx;
+  color: #8797ED;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30rpx;
+}

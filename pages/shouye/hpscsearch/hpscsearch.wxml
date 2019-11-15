@@ -1,0 +1,67 @@
+
+
+<!-- <input type='text' class='searchkey' bindconfirm='searchkey' value='{{searchvlue}}' placeholder='请输入查询企业关键字'></input>
+<image src='../../images/index_01.png' class='icon-search'></image> -->
+
+<view class='wid'> 
+  <!-- bindtap='keyword' -->
+    <input disabled='true' class='search' style='left:16px;width:10%;position:absolute;' />
+
+    <input type='text' class='search'  placeholder='搜索' focus="true"  
+    style='left:65rpx;width:80%;float:left;position:absolute;text-align:left'
+     bindconfirm='searchkey' bindinput='bindinputValue' maxlength="25" value='{{searchvlue}}'></input>
+
+    <input disabled='true' class='search' style='float:left;width:15%;position:absolute;right:30rpx;z-index:9'  bindtap='searchClose'/>
+
+
+    <image src='../../images/index_01.png' class='iconsearch'></image>
+    <image src='../../images/index_12.png' class='search-close' bindtap='searchClose'
+    style="display:{{searchClose}}"></image>
+
+    <!-- <icon type='clear' class='search-close' bindtap='searchClose' style="display:{{searchClose}}"></icon> -->
+
+    
+  </view>
+
+
+
+
+
+
+<view class='clear'></view>
+<scroll-view scroll-y="true" style="height: {{Height}}px" class='content' hidden="{{!isinfomation}}"  bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+ 
+    <!-- 1 -->
+
+    <view wx:for="{{collectlist}}" wx:for-item="collectlist">
+      <view class='hpsc fr'>
+      <view class='hpsc-list' bindtap="tapcollect" data-id='{{collectlist.id}}'>
+        <block  wx:if="{{collectlist.is_sale == 'Y'}}">
+        <image src='../../images/hpsc_03.png' class='img-success'></image>
+        </block>
+        
+        <text class='h1'>{{collectlist.accept_name}}</text>
+        <text class='h1'>票面金额：{{collectlist.amount}}</text>
+        <text class='h1'>汇票到期日：{{collectlist.expire_time}}</text>
+        <view class='h2'></view>
+        <text class='h3'>{{collectlist.time_h_i}} {{collectlist.location}}</text>
+        <view class='h4 {{drafttype[collectlist.draft_type - 1]}}'></view>
+        <view class='h5'>
+          <text class='h6'>{{collectlist.time_d}} {{collectlist.time_week}}</text>
+          <text class='h1'>{{collectlist.time_y_m}}</text>
+        </view>
+      </view>
+       </view>
+    </view>
+   
+    <view class='clear'></view>
+   
+ 
+  <view class='clear'></view>
+</scroll-view>
+
+ <view class='h10' hidden="{{isinfomation}}">暂无数据</view>
+
+
+
+

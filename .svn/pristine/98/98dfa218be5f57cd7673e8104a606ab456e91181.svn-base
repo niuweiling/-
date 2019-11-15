@@ -1,0 +1,73 @@
+<view class="top flex">
+  <view bindtap='shoucang'><text>收藏</text></view>
+  <view bindtap='liulan'><text>浏览</text></view>
+  <view><text class='cur'>点赞</text></view>
+</view>
+<view class='content'>
+  <!-- 1 -->
+  <view class='list'>
+    <view class='list-top flex'>
+      <view class='left'>
+        <view>
+          <text id='one'>李四</text>
+          <text>业务经理</text>
+        </view>
+        <view>主营业务 商票 电票 融资票</view>
+        <view>手机号  15321234564</view>
+        <view>公司 乐享投融（北京）网络科技有限公司</view>
+        <view>地址 北京市东四环中路82号金长安大厦C座</view>
+      </view>
+      <view class='right'>
+        <image src='../../images/my_05.png' class='img'></image>
+      </view>
+    </view>
+    <view class='list-bottom flex'>
+        <image src='../../images/my_07.png' class='phone'></image>
+        <view>打电话</view>
+    </view>
+  </view>
+  <!-- 2 -->
+  <view class='list'>
+    <view class='list-top flex'>
+      <view class='left'>
+        <view>
+          <text id='one'>李四</text>
+          <text>业务经理</text>
+        </view>
+        <view>主营业务 商票 电票 融资票</view>
+        <view>手机号  15321234564</view>
+        <view>公司 乐享投融（北京）网络科技有限公司</view>
+        <view>地址 北京市东四环中路82号金长安大厦C座</view>
+      </view>
+      <view class='right'>
+        <image src='../../images/my_05.png' class='img'></image>
+      </view>
+    </view>
+    <view class='list-bottom flex'>
+        <image src='../../images/my_07.png' class='phone'></image>
+        <view>打电话</view>
+    </view>
+  </view>
+  <!-- 3 -->
+  <view class='list'>
+    <view class='list-top flex'>
+      <view class='left'>
+        <view>
+          <text id='one'>李四</text>
+          <text>业务经理</text>
+        </view>
+        <view>主营业务 商票 电票 融资票</view>
+        <view>手机号  15321234564</view>
+        <view>公司 乐享投融（北京）网络科技有限公司</view>
+        <view>地址 北京市东四环中路82号金长安大厦C座</view>
+      </view>
+      <view class='right'>
+        <image src='../../images/my_05.png' class='img'></image>
+      </view>
+    </view>
+    <view class='list-bottom flex'>
+        <image src='../../images/my_07.png' class='phone'></image>
+        <view>打电话</view>
+    </view>
+  </view>
+</view>

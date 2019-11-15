@@ -1,0 +1,5 @@
+/* pages/danger/danger.wxss */
+.container{
+  width:94%;
+  padding:0 3%;
+}

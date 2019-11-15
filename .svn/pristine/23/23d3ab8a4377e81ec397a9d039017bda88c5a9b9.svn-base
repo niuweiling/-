@@ -1,0 +1,379 @@
+// pages/card/carddetail/carddetail.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    name: "",
+    position: "",
+    bpt: "",
+    phone: "",
+    org_name: "",
+    address: "",
+    avatar: "",
+    hidden: true,
+    mtitle: "提示",
+    from:''
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    if (options.data == undefined) {
+
+    
+
+      // this.setData({ 
+      //   avatar: "../../images/tx.png" 
+      // })
+
+      var cacheuserInfo = wx.getStorageSync('cacheuserInfo');
+
+
+      console.log('cacheuserInfo的值:' + cacheuserInfo)
+      if (cacheuserInfo != '' & cacheuserInfo != null) {
+        this.setData({
+          name: cacheuserInfo.nickName,
+          avatar: cacheuserInfo.avatarUrl
+        })
+      }
+
+    }else{
+      this.setData(JSON.parse(options.data))
+
+
+      var cacheuserInfo = wx.getStorageSync('cacheuserInfo');
+      if (cacheuserInfo != '' & cacheuserInfo != null) {
+        this.setData({
+          avatar: cacheuserInfo.avatarUrl
+        })
+      }else{
+        if (this.data.avatar == '../images/tx.png') {
+          this.setData({ avatar: "../../images/tx.png" })
+
+        }
+
+        if (this.data.avatar == '../images/my.png') {
+          this.setData({ avatar: "../../images/tx.png" })
+
+        }
+
+        if (this.data.avatar == '') {
+          this.setData({ avatar: "../../images/tx.png" })
+
+        }
+      }
+      
+      
+      
+
+      
+    }
+    console.log(this.data.avatar)
+    this.setData({ from: options.from })
+
+
+    
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  // /**
+  //  * 用户点击右上角分享
+  //  */
+  // onShareAppMessage: function () {
+  
+  // },
+  //切换头像
+  changeAvatar: function () {
+    var that = this;
+    // var childId = wx.getStorageSync("child_id");
+    // var token = wx.getStorageSync('token');
+    wx.chooseImage({
+      count: 1, // 最多可以选择的图片张数，默认9
+      sizeType: ['compressed'], // original 原图，compressed 压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+      success: function (res) {
+       // console.log(res.tempFilePaths + "修改页面")
+        var avatar = res.tempFilePaths;
+        that.setData({
+          avatar: avatar,
+          upAvatar: true
+        })
+
+      },
+      fail: function () {
+        // fail
+      },
+      complete: function () {
+        // complete
+      }
+    })
+  },
+
+
+  changeAvatar: function () {
+    let _this = this;
+    wx.showActionSheet({
+      count: 1,
+      itemList: ['从相册中选择', '拍照'],
+      //itemColor: "#0000FF",
+      success: function (res) {
+        if (!res.cancel) {
+          if (res.tapIndex == 0) {
+            _this.chooseWxImage('album')
+          } else if (res.tapIndex == 1) {
+            _this.chooseWxImage('camera')
+          }
+        }
+      }
+    })
+
+  },
+  chooseWxImage: function (type) {
+
+    
+    let _this = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: [type],
+      success: function (res) {
+        wx.showLoading()
+        
+//        console.log(res);
+        var avatar = res.tempFilePaths;
+        wx.uploadFile({
+          url: getApp().globalData.url+'/uploadfile.html',
+          filePath: avatar[0],
+          name: 'file',
+          header: {
+            "Content-Type": "multipart/form-data"
+          },
+          success: function (res) {
+            wx.hideLoading()
+            _this.setData({
+              avatar: getApp().globalData.url+"/"+res.data,
+              upAvatar: true
+            })
+
+//            console.log("fileUrl:" + getApp().globalData.url + "/" + res.data);
+//            console.log(getApp().globalData.url + "/" + res.data)
+            
+
+          },
+          fail: function (res) {
+            console.log("上传图片失败:" + res.errMsg)
+          }
+
+
+        })
+      }
+    })
+
+
+   
+
+
+  },
+
+
+  cancel: function () {
+    this.setData({
+      hidden: true
+    });
+  },
+  confirm: function () {
+
+    this.setData({
+      hidden: true
+    });
+//    console.log("clicked confirm");
+  },
+  blurVal:function(e){
+    this.setData({ phone:e.detail.value });
+    // var phonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+    // if (this.data.phone){
+    //   if (phonereg.test(this.data.phone)) {
+
+    //   } else {
+
+    //     this.setData({
+    //       hidden: false
+    //     })
+    //     this.setData({ content: "您输入的内容格式不正确，请检查后输入" });
+    //   }
+    // }
+    
+  },
+
+  validatemobile: function (mobile) {
+    if (mobile.length == 0) {
+      wx.showToast({
+        title: '请输入手机号！',
+        icon: 'success',
+        duration: 1500
+      })
+      return false;
+    }
+    if (mobile.length != 11) {
+      wx.showToast({
+        title: '手机号长度有误！',
+        icon: 'success',
+        duration: 1500
+      })
+      return false;
+    }
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+    if (!myreg.test(mobile)) {
+      wx.showToast({
+        title: '手机号有误！',
+        icon: 'success',
+        duration: 1500
+      })
+      return false;
+    }
+    return true;
+  },
+  blurname: function (e) {
+    this.setData({ name: e.detail.value });
+    // var namereg = /^[\u4e00-\u9fa5]{2,6}$/;
+    // if (this.data.uname) {
+    //   if (namereg.test(this.data.uname)) {
+
+    //   } else {
+
+    //     this.setData({
+    //       hidden: false
+    //     })
+    //     this.setData({ content: "您输入的内容格式不正确，请检查后输入" });
+    //   }
+    // }
+   
+  },
+  blurposition: function (e) {
+    this.setData({ position: e.detail.value });
+  },
+
+  blurorgname: function (e) {
+    this.setData({ org_name: e.detail.value });
+  },
+  bluraddress: function (e) {
+    this.setData({ address: e.detail.value });
+  },
+  blurbpt: function (e) {
+    this.setData({ bpt: e.detail.value });
+  },
+  
+  getinfor:function(){
+    wx.showLoading()
+
+
+    var avatar = this.data.avatar;
+    if (avatar == '../../images/tx.png'){
+        avatar ='';
+    }
+
+    if(!this.validatemobile(this.data.phone)){
+
+        return;
+    }
+    
+    var that = this;
+    wx.request({
+      url: getApp().globalData.url+'/updatewentimpbj.html',
+      data: {
+       name:this.data.name,
+       fileUrl: avatar,
+       uid: getApp().globalData.openid,
+       duties: this.data.position,
+       business: this.data.bpt,
+       phone: this.data.phone,
+       company: this.data.org_name,
+       address: this.data.address
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        wx.hideLoading()
+//        console.log(res.data)
+        if (res.data.result == 'true') {
+
+
+          getApp().globalData.num='true';
+
+          if (that.data.from =='index'){
+            wx.redirectTo({
+              url: '../card'
+            })
+          }else{
+            wx.navigateBack({
+              delta: 1
+            })
+          }
+          
+
+
+          
+          
+          
+
+
+        } else {
+          
+        }
+
+
+      }
+    })
+    
+  }
+ 
+
+})

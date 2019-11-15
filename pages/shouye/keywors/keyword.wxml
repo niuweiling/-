@@ -1,0 +1,64 @@
+<view class="content">
+  <view>
+    <input type='text' class='search' placeholder='请输入查询企业关键字'></input>
+    <image src='../../images/index_01.png' class='icon-search'></image>
+  </view>
+  <view bindtap='details'>
+    <view class='key-title'>北京京能国际能源股份有限公司</view>
+    <view class='key'>
+      <view class='key-item'>
+        <text>价格区间</text>
+        <text class='k1'>7-10</text>
+      </view>
+      <view class='key-item'>
+        <text>贴现联系人</text>
+        <text class='k1'>客服</text>
+      </view>
+      <view class='key-item'>
+        <text>联系电话</text>
+        <text class='k1'>400-628-7087</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='key-jg'></view>
+<view class='content1'>
+  <view bindtap='details'>
+    <view class='key-title'>北京京能国际能源股份有限公司</view>
+    <view class='key'>
+      <view class='key-item'>
+        <text>价格区间</text>
+        <text class='k1'>7-10</text>
+      </view>
+      <view class='key-item'>
+        <text>贴现联系人</text>
+        <text class='k1'>客服</text>
+      </view>
+      <view class='key-item'>
+        <text>联系电话</text>
+        <text class='k1'>400-628-7087</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='key-jg'></view>
+<view class='content1'>
+  <view bindtap='details'>
+    <view class='key-title'>北京京能国际能源股份有限公司</view>
+    <view class='key'>
+      <view class='key-item'>
+        <text>价格区间</text>
+        <text class='k1'>7-10</text>
+      </view>
+      <view class='key-item'>
+        <text>贴现联系人</text>
+        <text class='k1'>客服</text>
+      </view>
+      <view class='key-item'>
+        <text>联系电话</text>
+        <text class='k1'>400-628-7087</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='key-jg'></view>

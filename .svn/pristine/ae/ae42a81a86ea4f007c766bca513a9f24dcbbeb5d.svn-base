@@ -1,0 +1,32 @@
+<view class="content">
+  <view class='top flex'>
+    <text>头像</text>
+    <image src='../../images/my_05.png' class='img'></image>
+    <image src='../../images/apply_02.png' class='img-next'></image>
+  </view>
+  <view class='list flex'>
+    <text>姓名</text>
+    <input type='text' placeholder='请输入姓名'></input>
+  </view>
+  <view class='list flex'>
+    <text>联系方式</text>
+    <input type='text' placeholder='请输入联系方式'></input>
+  </view>
+  <view class='list flex'>
+    <text>职务</text>
+    <input type='text' placeholder='请输入职务'></input>
+  </view>
+  <view class='list flex'>
+    <text>公司</text>
+    <input type='text' placeholder='请输入公司名称'></input>
+  </view>
+  <view class='list flex'>
+    <text>办公地址</text>
+    <input type='text' placeholder='请输入办公地址'></input>
+  </view>
+  <view class='bottom flex'>
+    <text>业务介绍</text>
+    <textarea placeholder='请输入业务介绍' auto-height maxlength='-1'></textarea>
+  </view>
+</view>
+<button class='btn'>保存</button>

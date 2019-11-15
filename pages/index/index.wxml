@@ -1,0 +1,65 @@
+<!--index.wxml-->
+
+<view style="display:{{showModel2}}">
+<view class="container">
+ <view class="div-row" bindtap='gocal'>
+    <view class="row-lword">
+      <text class="big-title">贴现计算器\n\t</text>
+      <text>票据贴现好帮手</text>
+    </view>
+    <image class="icon"  src="{{src}}"></image>
+ </view>
+ <view class="div-row card" bindtap='gocard'>
+    <view class="row-lword">
+      <text class="big-title">名片定制\n\t</text>
+      <text>私人订制只属于您的名片</text>
+    </view>
+    <image class="icon"  src="{{cardsrc}}"></image>
+ </view>
+ <view class="div-row bank" bindtap='gobank'>
+    <view class="row-lword">
+      <text class="big-title">大额行号\n\t</text>
+      <text>三十万家银行大额行号随时查询</text>
+    </view>
+    <image class="icon icon-bank"  src="{{banksrc}}"></image>
+ </view>
+ <view class="div-row risk" bindtap='gorisk'>
+    <view class="row-lword">
+      <text class="big-title">风险查询\n\t</text>
+      <text>每天实时更新有问题的票据</text>
+    </view>
+    <image class="icon"  src="{{risksrc}}"></image>
+ </view>
+ <view class="div-row shibor" bindtap='goshibor'>
+    <view class="row-lword">
+      <text class="big-title">Shibor\n\t</text>
+      <text>每日可查询同行业拆放利率</text>
+    </view>
+    <image class="icon"  src="{{shiborsrc}}"></image>
+ </view>
+ <view class="div-row news" bindtap='gonews'>
+    <view class="row-lword">
+      <text class="big-title">票据资讯\n\t</text>
+      <text>实时更新票据行业一手信息</text>
+    </view>
+    <image class="icon"  src="{{newsrc}}"></image>
+ </view>
+</view>
+
+</view>
+
+
+
+<view style="display:{{showModel}}">
+  
+
+    <image src="../images/logo.png" class="logo-icon"></image>
+  <image src='../images/logo-text.png' class='logo-text'></image>
+
+  <text style="margin-top:7%;font-size:16px;color:#757375;display:flex;align-items:center;justify-content:center;">此功能需要您的授权才能继续</text>
+
+  <button open-type="getUserInfo" class="yyzh" bindgetuserinfo="gocard" lang="zh_CN">去设置</button>
+
+  
+ 
+ </view>
