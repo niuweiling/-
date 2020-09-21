@@ -1,0 +1,118 @@
+<!--pages/counter/counter.wxml-->
+<view class="nav">
+	<view><text class="cur">前置计算</text></view>
+	<view><text bindtap="bindNext">后置计算</text></view>
+	<view><text bindtap="bindMix">组合计算</text></view>
+</view>
+<view class="content">
+	<text class="title">开始计算</text>
+	<!-- 第一排计算 -->
+	<view class="list">
+		<view class="info">
+			<view class="listTxt">存款金额(万元)</view>
+			<view class="listInput">
+				<input type="digit" placeholder="请输入金额" value="{{ckje}}" bindinput="bindCkje"></input>
+			</view>
+		</view>
+		<view class="info">
+			<view class="listTxt">存款利率(%)</view>
+			<view class="listInput">
+				<input type="digit" placeholder="%" value="{{ckll}}" bindinput="bindCkll"></input>
+			</view>
+		</view>
+		<view class="info">
+			<view class="listTxt">贴现利率(%)</view>
+			<view class="listInput">
+				<input type="digit" placeholder="%" value="{{txll}}" bindinput="bindTxll"></input>
+			</view>
+		</view>
+	</view>
+
+
+	<!-- 一列两个输入 -->
+	<view class="shareList">
+
+		<view class="shareInfo">
+			<view class="shareTxt">贴现日期</view>
+			<view class="shareInput">
+				<picker mode="date" value="{{date1}}" start="{{minDate}}" end="{{maxDate}}" bindchange="dateChange" class="v-mode"
+				 placeholder="请输入日期">
+					{{date1}}{{week1}}
+				</picker>
+			</view>
+		</view>
+
+		<view class="shareInfo">
+			<view class="shareTxt">到期日期</view>
+			<view class="shareInput">
+				<picker mode="date" value="{{date2}}" start="{{minDate}}" end="{{maxDate}}" bindchange="dateChanges" class="v-mode"
+				 placeholder="请输入日期">
+					{{date2}}{{week2}}
+				</picker>
+			</view>
+		</view>
+
+		<view class="shareInfo">
+			<view class="shareTxt">开票手续费率(%)</view>
+			<view class="shareInput">
+				<input type="digit" placeholder="0.05%" value="{{kpsxf}}" bindinput="bindKpsxf"></input>
+			</view>
+		</view>
+
+		<view class="shareInfo">
+			<view class="shareTxt">资金成本率(%)</view>
+			<view class="shareInput">
+				<input type="digit" placeholder="%" value="{{zjcbl}}" bindinput="bindZjcbl"></input>
+			</view>
+		</view>
+
+		<view class="shareInfo">
+			<view class="shareTxt">资金占用天数</view>
+			<view class="shareInput smallInput">
+				<input type="number" value="{{zjzyts}}" bindinput="bindZjzyts"></input>
+			</view>
+			<text>天</text>
+		</view>
+
+		<view class="shareInfo">
+			<view class="shareTxt">其他成本(元)</view>
+			<view class="shareInput smallInput">
+				<input type="digit" placeholder="非必填" value="{{qtcb}}" bindinput="bindQtcb"></input>
+			</view>
+			<image src="/pages/images/counter.png" bindtap="bindCalor" />
+		</view>
+
+
+	</view>
+
+</view>
+<view class="btn">
+	<button class="empty" bindtap="bindEmpty">清空</button>
+	<button class="count" bindtap="bindCount">计算</button>
+</view>
+
+<!-- 结果 -->
+<view class="result">
+	<text class="title">得出结果</text>
+	<view class="resList">
+		<text class="resTxt">票面金额</text>
+		<text class="resCount">{{pmje}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">贴现金额</text>
+		<text class="resCount">{{txje}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">开票手续费</text>
+		<text class="resCount">{{kpje}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">资金成本</text>
+		<text class="resCount">{{zjcb}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">前置收益</text>
+		<text class="resCount">{{qzsy}}元</text>
+	</view>
+</view>
+<view class="copy">此版权归乐享数科有限公司所有</view>

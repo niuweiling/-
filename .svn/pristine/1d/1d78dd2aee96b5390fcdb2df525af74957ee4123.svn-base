@@ -1,0 +1,90 @@
+<!--pages/forum/forum.wxml-->
+<view class="content">
+  <!-- 模型 -->
+  <view class="model">
+    <view class="top">
+      <image src="{{list.avatar}}"></image>
+      <view class="username">{{list.name}}</view>
+      <view class="times">{{detailCreateTime}}</view>
+    </view>
+    <view class="info">
+      <view class="infoTitle">标题：{{detailTitle}}</view>
+      <view class="infoItem">内容：{{detailContent}}</view>
+      <view class="detailImg">
+        <block wx:for="{{detailImages}}" wx:key="index">
+          <image src="{{'https://' + item}}" class="infoImg" data-url="{{'https://' + item}}" bindtap="ckpm"/>
+        </block>
+      </view>
+    </view> 
+    <view class="infoTab">
+      <view class="infoTabItem" bindtap="bindPrivate">
+        <image src="/images/index/10.png"/>
+        <text>私信</text>
+      </view>
+      <view class="infoTabItem">
+        <image src="/images/index/11.png"/>
+        <text>{{detailReplyTimes}}</text>
+      </view>
+      <view class="infoTabItem" bindtap="clickPraise">
+        <image src="/images/index/12.png"/>
+            <!-- <text>{{newnum}}</text> -->
+        <text>{{favorite_count}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 全部评论 -->
+  
+  <view class="all">
+    <view>
+      <view class="allTitle">
+        全部评论  3
+      </view>
+      <block wx:for="{{replyList}}" wx:key="index">
+        <view class="allContent">
+          <view class="allItem">
+            <view class="allInfo">
+              <image src="{{item.avatar}}"/>
+              <text class="name">{{item.name}}</text>
+              <text class="hour">{{item.create_time}}</text>
+            </view>
+            <view class="allTxt">{{item.content}}</view>
+            <view class="allImage">
+              <block wx:for="{{item.images}}" wx:key="itemIndex" wx:for-item="itemImg" wx:for-index="itemIndex">
+                <image src="{{'https://' + itemImg}}"class="infoImg" bindtap="ckpm"/>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <!-- 回复列表没有数据 -->
+    <view class="noData">没有数据了</view>
+  </view>
+  
+  
+</view>
+<!-- 底部 -->
+<view class="foot" bindtap="bindReply">
+  <view class="footContent">
+    <input placeholder="说点什么。。。"/>
+    <view class="footImgShow" wx:if="{{footImgShow.length > 0}}">
+      <block wx:for="{{footImgShow}}" wx:key="index">
+        <image src="{{item}}"/>
+      </block>
+    </view>
+  </view>
+  <text>发表</text>
+  <image src="/images/forum/file.png" class="footImg"/>
+</view>
+
+<!-- 私信弹框 -->
+<view class="private" hidden="{{isShow}}">
+  <view class="privateBox">
+    <image src="/images/forum/close.png" class="privateClose" bindtap="privateClose"/>
+    <view class="privateOne">私信功能，请下载云票据APP</view>
+    <view class="privateTwo">与票友零距离沟通仅差一步</view>
+    <image src="/images/forum/ewm.png" class="privateImg" show-menu-by-longpress/>
+    <view class="privateThree">长按识别二维码即可下载</view>
+  </view>
+</view>
+

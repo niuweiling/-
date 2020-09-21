@@ -1,0 +1,109 @@
+<!-- 搜索 -->
+<view class="searchBox">
+  <view class="search" bindtap="search">
+    <image src="/pages/images/index_01.png"/>
+    <text>请输入查询企业关键词</text>
+  </view>
+</view>
+<!-- 导航 -->
+<view class="fixed">
+  <view class="fixedItem" bindtap="tapcal">
+    <image src="/images/index/01.png"/>
+    <text>贴现计算器</text>
+  </view>
+  <view class="fixedItem" bindtap="tapclass">
+    <image src="/images/index/02.png"/>
+    <text>票据课堂</text>
+  </view>
+  <view class="fixedItem" bindtap="tapcounter">
+    <image src="/images/index/03.png"/>
+    <text>乐享计算器</text>
+  </view>
+  <view class="fixedItem" bindtap="taphpsc">
+    <image src="/images/index/04.png"/>
+    <text>汇票收藏</text>
+  </view>
+  <view class="fixedItem" bindtap="gocard">
+    <image src="/images/index/05.png"/>
+    <text>名片分享</text>
+  </view>
+  <view class="fixedItem" bindtap="tapbank">
+    <image src="/images/index/06.png"/>
+    <text>大额行号</text>
+  </view>
+  <view class="fixedItem" bindtap="tapapply">
+    <image src="/images/index/07.png"/>
+    <text>授信申请</text>
+  </view>
+  <view class="fixedItem" bindtap="tapshibor">
+    <image src="/images/index/08.png"/>
+    <text>Shibor</text>
+  </view>
+</view>
+<!-- 热点时讯 -->
+<view class="hot">
+  <view class="hotLeft">
+    <text>热点时讯</text>
+    <image src="/images/index/09.png"/>
+  </view>
+  <view class="hotCenter">
+    <swiper autoplay
+            interval="5000"
+            duration="200"
+            circular
+            vertical>
+      <block wx:for="{{news}}" wx:key="index">
+        <swiper-item><text>{{item.title}}</text></swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="hotRight" bindtap="tapnews">更多></view>
+</view>
+<!-- 列表展示 -->
+<view class="container">
+  <view class="title">
+    <view class="titleTxt">票友论坛</view>
+  </view>
+  <block wx:for="{{forumList}}" wx:key="index">
+    <view class="content" bindtap="forum" data-id="{{item.id}}">
+      <view class="top">
+           <image src="{{item.avatar}}"></image>
+          <view class="shareflex">
+           <view class="username">{{item.name}}</view>
+           
+          </view>
+          <view class="times">{{item.create_time}}</view>
+        </view>
+        <view class="info">
+          <view class="infoTitle">标题：{{item.title}}</view>
+          <view class="infoItem">内容：{{item.content}}</view>
+          <view class="imgflex">
+          
+          <block  wx:for="{{item.images}}" wx:key="itemIndex" wx:for-item="itemImg" wx:for-index="itemIndex">
+            <image src="{{'https://' + itemImg}}"class="infoImg" bindtap="ckpm"/>
+          </block>
+          </view>
+        </view> 
+        <view class="infoTab">
+          <view class="infoTabItem">
+            <image src="/images/index/10.png"/>
+            <text>私信</text>
+          </view>
+          <view class="infoTabItem">
+            <image src="/images/index/11.png"/>
+            <text>{{item.reply_times}}</text>
+          </view>
+          <view class="infoTabItem" bindtap="clickPraise">
+            <image  src="/images/index/12.png"/>
+              <!-- <text>{{newnum}}</text> -->
+              <text>{{item.favorite_count}}</text>
+            <!-- <text>{{item.favorite_count=0?'0':'item.favorite_count+newnum'}}</text> -->
+          </view>
+        </view>
+    </view>
+  </block>
+  <view class="noData">没有数据了</view>
+</view>
+
+
+

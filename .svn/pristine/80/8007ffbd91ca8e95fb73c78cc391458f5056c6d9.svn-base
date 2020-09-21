@@ -1,0 +1,102 @@
+.title{
+  display: block;
+  font-size: 32rpx;
+  color: #101010;
+  font-weight: bold;
+  margin-top: 80rpx;
+  margin-left: 40rpx;
+}
+.info{
+  width: 100%;
+  padding-left: 100rpx;
+  padding-right: 90rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 20rpx;
+  border-bottom: 1px solid #e8e8e8;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.list .icon{
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 34rpx;
+}
+.list input{
+  display: inline-block;
+  width: 360rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+}
+.a1{
+  margin-top: 80rpx;
+}
+.a2{
+  margin-top: 40rpx;
+}
+
+.password{
+  width:40rpx;
+  height:40rpx;
+}
+.yzm{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding:0 20rpx;
+  box-sizing: border-box;
+  margin: 40rpx auto 0;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+}
+.yzm input{
+  display: inline-block;
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 24rpx;
+}
+.yzm .codeIcon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 34rpx;
+}
+.hq{
+  display: inline-block;
+  text-align: center;
+  font-size: 24rpx;
+  color: #518cee;
+}
+.register{
+  background-color: #518cee;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 28rpx;
+  margin-top: 36rpx;
+  border-radius: 72rpx;
+}
+.agree{
+  font-size: 24rpx;
+  color: #aaa;
+  text-align: center;
+  margin-top: 10rpx;
+}
+
+/* 发送验证码按钮隐藏，并展示倒数60s提示 */
+.hide{
+ display: none;
+}
+.show{
+ display: block;
+}

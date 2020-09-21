@@ -1,0 +1,98 @@
+/* pages/shouye/apply/apply.wxss */
+page{
+  background: #fff;
+}
+
+.clear{clear: both; height: 0; overflow: hidden}
+.apply-jg{
+  height: 20rpx;
+  background: #eee;
+}
+.content{
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+.apply-list{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: #e6e6e6 solid 1px;
+  font-size: 28rpx;
+}
+.a1{
+  color: #8797ED;
+}
+.a2{
+  color: #757375;
+  margin-left: 10rpx;
+}
+.a3{
+  color: #757375;
+  font-size: 28rpx;
+  margin-left: 15rpx;
+}
+.apply-list input{
+  width: 68%;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+  /* border: solid #4F4D4F 1px */
+}
+.pmxx{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #eee;
+  font-size: 28rpx;
+  color: #4F4D4F;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+.border{
+  border: none
+}
+.camera{
+  width: 200rpx;
+  height: 170rpx;
+  border: #e5e5e5 solid 1px;
+  border-radius: 10rpx;
+  margin-left: 210rpx;
+}
+.apply-img{
+  display: block;
+  width: 200rpx;
+  height: 170rpx;
+}
+.bor-top{
+  border-top: solid #e6e6e6 1px;
+  margin-top: 30rpx;
+}
+.picker{
+  margin-left: 100rpx;
+}
+.section{
+   width: 75%;
+}
+.bottom{
+  background: #eee;
+  padding: 66rpx 30rpx;
+}
+.bottom button{
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  background: #8797ED;
+  color: #fff;
+  font-size: 28rpx;
+}
+.apply-next{
+  width: 14rpx;
+  height: 26rpx;
+  margin-top: 22rpx
+}
+.hide{
+ display: none;
+}
+.show{ 
+ display: block;
+}

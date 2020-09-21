@@ -1,0 +1,281 @@
+// pages/forum/forum.js
+const app = getApp();
+import NIM from '../../plugin/NIM_Web_NIM_miniapp_v7.8.1.js'
+const forumNum = 5; //评论列表每次请求的数据个数
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    avatar: "",
+    name: "",
+    forumList:[], //票友论坛请求到的数据
+    isShow: true,  //私信弹框
+    footImgShow: [], //展示选择的本地图片
+    detailId: 0, //首页带过来的id
+    detailTitle: '',
+    detailContent: '',
+    detailCreateTime:'',
+    detailReplyTimes: '',
+    favorite_count:'',//点赞数
+    detailImages: '',
+    offset: 0,
+    replyList:[], //回复列表
+    current: '',
+    urls: [],
+    istrue:false,
+    color:'/images/index/12.png',
+    iscolor:'/images/index/13.png',
+  },
+  // 监听私信
+  bindPrivate(){
+    this.setData({
+      isShow: false
+    })
+  },
+  // 关闭私信弹框
+  privateClose(){
+    this.setData({
+      isShow: true
+    })
+  },
+
+  // 跳转到回复
+  bindReply(){
+    wx.reLaunch({
+      url: '/pages/forum/reply/reply?id='+ this.data.detailId,
+    })
+  },
+
+  // 请求详情页数据
+  forumDetail(){
+    var that = this;
+    wx.request({
+      url: app.globalData.newurl + '/api/v1/bbs/detail',
+      data: {
+        access_token: app.getaccess_token(),
+        timestamp: app.gettimestamp(),
+        uid: app.globalData.uid + "",
+        token: app.globalData.token,
+        id: this.data.detailId,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        console.log(res);
+        if(res.data.status == '10001'){
+          let list = res.data.data;
+          let nim = NIM.getInstance({
+            debug: false,   // 是否开启日志，将其打印到console。集成开发阶段建议打开。
+            appKey: 'b5f2c765c9c9de16d0783c63e118ad73',
+            account: app.globalData.uid,
+            token: app.globalData.token,
+            db:true, //若不要开启数据库请设置false。SDK默认为true。
+          });
+          //获取uid-avatar
+          nim.getUser({
+            account: list.uid,
+            done: function (error, user) {
+              list.name = user.nick ? user.nick: '默认';
+              list.avatar = user.avatar ? user.avatar : '/images/forum/default.png'
+              that.setData({
+                list: list,
+                detailTitle: list.title,
+                detailContent: list.content,
+                detailCreateTime: list.create_time,
+                detailReplyTimes: list.reply_times,
+                favorite_count:list.favorite_count,
+                detailImages: list.images,
+              })
+            }
+          })
+        }else{
+          console.log(res.data.message)
+        }
+      }
+    })
+  },
+  
+ //点赞
+zan:function(){
+  var that=this;
+  that.setData({
+    istrue: true
+  })
+  setTimeout(res => {
+    that.setData({
+      istrue: false,
+    });
+    clearTimeout()
+  }, 500);
+  var that = this;
+  var favorite_count=this.data.favorite_count;
+  console.log(favorite_count)
+  wx.request({
+    url: app.globalData.newurl +'/api/v1/bbs/focus',
+    data: {
+      access_token: app.getaccess_token(),
+      timestamp: app.gettimestamp(),
+      uid: app.globalData.uid + "",
+      token: app.globalData.token,
+      type: 3,
+      rid: this.data.detailId
+    },
+    method: 'POST',
+    header: {
+      'content-type': 'application/json'
+    },
+    success:res=>{
+      console.log(res)
+      let count=res.data.data.count;
+        if(res.data.data.status == '1'){
+          that.setData({
+            favorite_count: parseInt(favorite_count) + 1,
+          });         
+        }else{
+          console.log(res.data.message)
+      }
+    }
+  })
+  },
+  
+  // 请求评论列表
+  forumRequest:function(limit) {
+    let offset = this.data.offset;
+    wx.request({
+      url: app.globalData.newurl + '/api/v1/bbs/list',
+      data: {
+        access_token: app.getaccess_token(),
+        timestamp: app.gettimestamp(),
+        uid: app.globalData.uid + "",
+        token: app.globalData.token,
+        id: this.data.detailId,
+        type: '',
+        offset: offset,
+        limit: limit,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        console.log(res)
+        const data = res.data
+        if(res.data.status == '10001'){
+            const list = res.data.data;
+            let oldList = this.data.replyList;
+            oldList.push(...list);
+            let replyList= this.data.replyList;
+            for(let i in replyList){
+              let nim = NIM.getInstance({
+                debug: false,   // 是否开启日志，将其打印到console。集成开发阶段建议打开。
+                appKey: 'b5f2c765c9c9de16d0783c63e118ad73',
+                account: app.globalData.uid,
+                token: app.globalData.token,
+                db:true, //若不要开启数据库请设置false。SDK默认为true。
+              });
+              nim.getUser({
+                account: replyList[i].uid,
+                done:  (error, user) => {
+                    replyList[i].name = user.nick ? user.nick: '默认';
+                    replyList[i].avatar = user.avatar ? user.avatar : '/images/forum/default.png'
+                    this.setData({
+                      replyList: replyList
+                    })
+                }
+              })
+            }
+            this.setData({
+              replyList: replyList
+            })
+        }else{
+          console.log(res.data.message)
+        }
+      }
+    })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+   console.log(options)
+    // 获取首页带过来的id
+    const id = options.id;
+    this.setData({
+      detailId: id,
+    })
+    // 请求详情页数据
+    this.forumDetail();
+    // this.zan();
+  
+  },
+  
+
+  // 查看大图
+  ckpm: function (event) {
+    console.log(event)
+    var url = event.currentTarget.dataset.url;//获取data-src
+    var urls = [event.currentTarget.dataset.url]
+    // console.log(url, urls)
+    //图片预览
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: urls // 需要预览的图片http链接列表
+    })
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.forumRequest(forumNum)
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+   
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    let offset = this.data.offset + 1;
+    this.setData({
+      offset: offset
+    })
+    this.forumRequest(forumNum)
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

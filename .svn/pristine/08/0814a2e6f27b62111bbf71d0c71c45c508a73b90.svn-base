@@ -1,0 +1,70 @@
+/* pages/forum/picture/picture.wxss */
+.content{
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.title{
+  background-color: #fff;
+  width: 100%;
+  min-height: 80rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.title input{
+  font-size: 28rpx;
+  color: #101010;
+}
+.write{
+  background-color: #fff;
+  width: 100%;
+  padding: 20rpx;
+  margin-top: 24rpx;
+  box-sizing: border-box;
+}
+.write textarea{
+  font-size: 24rpx;
+  color: #101010;
+}
+.imgBox{
+  width: 100%;
+  margin-top: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+
+}
+.imgBox .imgs{
+  width: 214rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+}
+.imgBox .img{
+  width: 214rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+  /* padding-right: 11rpx; */
+  padding-right: 7rpx;
+
+ 
+  
+}
+.imgBox .img:nth-child(3n){
+  width: 214rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+  padding-right: 0rpx;
+ 
+  
+}
+.send{
+  display: block;
+  background-color: #518CEE;
+  width: 460rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 40rpx;
+  border-radius: 72rpx;
+}

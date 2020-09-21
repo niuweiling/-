@@ -1,0 +1,19 @@
+<!--pages/forum/reply/reply.wxml-->
+<view class="content">
+  <view class="write">
+    <textarea placeholder="随便写点什么~"
+              placeholder-style="#aaa"
+              class="textarea"
+              auto-focus
+              maxlength="-1"
+              value="{{write}}"
+              bindinput="bindWrite"/>
+    <view class="imgBox">
+      <block wx:for="{{houseImg}}" wx:key="index">
+        <image src="{{'https://'+item}}" data-url="{{item}}" class="img" bindtap="ckpm"/>
+      </block>
+      <image src="/images/forum/choose.png" class="img" bindtap="uploadImage"/>
+    </view>
+  </view>
+  <button class="send" bindtap="send">发表</button>
+</view>

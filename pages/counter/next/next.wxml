@@ -1,0 +1,116 @@
+<!--pages/counter/next/next.wxml-->
+<view class="nav">
+	<view><text bindtap="bindPre">前置计算</text></view>
+	<view><text class="cur">后置计算</text></view>
+	<view><text bindtap="bindMix">组合计算</text></view>
+</view>
+
+<view class="content">
+	<text class="title">开始计算</text>
+	<!-- 一排两个 -->
+	<view class="avg">
+		<view class="avgInfo">
+			<view class="avgTxt">存款金额(万元)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="请输入金额" value="{{ckje}}" bindinput="bindCkje"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">贴现利率(%)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="%" value="{{txll}}" bindinput="bindTxll"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">贴现日期</view>
+			<view class="avgInput">
+				<picker mode="date" value="{{date1}}" start="{{minDate}}" end="{{maxDate}}" bindchange="dateChange" class="v-mode"
+				 placeholder="请输入日期">
+					{{date1}}{{week1}}
+				</picker>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">到期日期</view>
+			<view class="avgInput">
+				<picker mode="date" value="{{date2}}" start="{{minDate}}" end="{{maxDate}}" bindchange="dateChanges" class="v-mode"
+				 placeholder="请输入日期">
+					{{date2}}{{week2}}
+				</picker>
+			</view>
+		</view>
+
+		<view class="avgInfo">
+			<view class="avgTxt">开票手续费率(%)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="0.05%" value="{{kpsxfl}}" bindinput="bindKpsxfl"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">资金成本率(%)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="%" value="{{zjcbl}}" bindinput="bindZjcbl"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">资金占用天数</view>
+			<view class="avgInput">
+				<input type="digit" value="{{zjzyts}}" bindinput="bindZjzyts"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">后置存款利率(%)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="%" value="{{hzckll}}" bindinput="bindHzckll"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">贴现息资金占用成本(元)</view>
+			<view class="avgInput">
+				<input type="digit" placeholder="请输入金额" value="{{txxzj}}" bindinput="bindTxxzj"></input>
+			</view>
+		</view>
+		<view class="avgInfo">
+			<view class="avgTxt">其他成本(元)</view>
+			<view class="avgInput avgSmall">
+				<input type="digit" placeholder="非必填" value="{{qtcb}}" bindinput="bindQtcb"></input>
+			</view>
+			<image src="/pages/images/counter.png" bindtap="bindCalor" />
+		</view>
+	</view>
+</view>
+<!-- 按钮 -->
+<view class="btn">
+	<button class="empty" bindtap="bindEmpty">清空</button>
+	<button class="count" bindtap="bindCount">计算</button>
+</view>
+
+<!-- 结果 -->
+<view class="result">
+	<text class="title">得出结果</text>
+	<view class="resList">
+		<text class="resTxt">票面金额</text>
+		<text class="resCount">{{pmje}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">贴现金额</text>
+		<text class="resCount">{{txje}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">开票手续费</text>
+		<text class="resCount">{{kpsxf}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">资金成本</text>
+		<text class="resCount">{{zjcb}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">后置存款收益</text>
+		<text class="resCount">{{hzcksy}}元</text>
+	</view>
+	<view class="resList">
+		<text class="resTxt">后置收益</text>
+		<text class="resCount">{{hzsy}}元</text>
+	</view>
+</view>
+<view class="copy">此版权归乐享数科有限公司所有</view>

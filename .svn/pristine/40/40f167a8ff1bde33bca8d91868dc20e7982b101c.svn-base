@@ -1,0 +1,177 @@
+/* pages/counter/mix/mix.wxss */
+page{
+  background: #f8f8f8;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.nav{
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row
+}
+.nav view{
+  flex: 1;
+  font-size: 28rpx;
+  text-align: center
+}
+.nav view text{
+  padding: 0 10rpx 10rpx;
+}
+.nav view text.cur{
+  color: #518cee;
+  border-bottom: solid 2px #518cee
+}
+
+
+.content{
+  background: #fff;
+  width: 100%;
+  padding: 0 20rpx 20rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box
+}
+.title{
+  display: block;
+  width: 100%;
+  font-size: 28rpx;
+  text-align: center;
+  padding-top: 20rpx;
+  position: relative
+}
+.title::before,.title::after{
+  content: '';
+  width: 250rpx;
+  height: 0;
+  border: 2rpx #bbb dashed;
+  position: absolute;
+  top: 40rpx;
+}
+.title::before{
+  right: 0;
+}
+.title::after{
+  left: 0;
+}
+
+/* 第一排计算 */
+.list{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.list .info{
+  flex: 1;
+}
+.info .listTxt{
+  font-size: 24rpx;
+}
+.info .listInput{
+  background: #f8f8f8;
+  width: 204rpx;
+  height: 60rpx;
+  border: solid 1px #bbb;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+.listInput input{
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+
+
+/* 一排两个列表 */
+.shareList{
+  display: flex;
+  flex-wrap: wrap;
+}
+.shareList .shareInfo{
+  width: 50%;
+  margin-top: 30rpx;
+}
+.shareInfo .shareTxt{
+  font-size: 24rpx;
+}
+.shareInfo .shareInput{
+  background: #f8f8f8;
+  width: 300rpx;
+  height: 60rpx;
+  border: solid 1px #bbb;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+.shareInfo .shareInput.smallInput{
+  float: left;
+  width: 250rpx;
+  margin-right: 10rpx;
+}
+.shareInfo>text{
+  float: left;
+  line-height: 75rpx;
+  font-size: 24rpx;
+}
+.shareInfo>image{
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+.shareInput input, .shareInput picker{
+  width: 100%;
+  height: 100%;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+
+/* 两个按钮 */
+.btn{
+  text-align: center;
+  margin-top: 20rpx;
+}
+.btn button{
+  display: inline-block;
+  width: 284rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 10rpx;
+}
+.btn button.empty{
+  background: #fe5a00;
+  margin-right: 50rpx;
+}
+.btn button.count{
+  background: #518cee
+}
+
+/* 结果 */
+.result{
+  background: #e6e6e6;
+  width: 100%;
+  padding: 0 20rpx 20rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+}
+.result .resList{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+.resList .resTxt{
+  float: left
+}
+.resList .resCount{
+  float: right
+}
+
+.copy{
+  width: 100%;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 40rpx;
+}

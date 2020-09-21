@@ -1,0 +1,67 @@
+<!--pages/class/music/music.wxml-->
+<view class="scontainer">
+     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper" bindchange='onSliderChange' current='0'>
+             <block wx:for="{{detail.carousel}}" wx:key="">
+                    <swiper-item>
+                           <image src="{{detail.carousel[index]}}" class="slide-image"/>
+                   </swiper-item>
+            </block>
+      </swiper>
+      <view class="tr">{{picindex}}/{{detail.carousel.length}}</view>
+</view>
+<view class="introcon">
+      <view class="title">{{detail.title}}</view>
+      <view class="introde">{{detail.content}}</view>
+</view>
+<view class="playercon">
+      <view class="player">
+            <view class="progress">
+                  <text>{{progressText}}</text>
+                  <slider class="bar" bindchange='sliderChange' bindchanging='sliderchanging' value="{{progress}}" step='1' min="0"
+                   max="{{duration}}" activeColor='#fe5a00' block-size='12' color='#d9d5d5' block-color='#ffffff'></slider>
+                   <text>{{durationText}}</text>
+            </view>
+            <view class="options">
+                <view class="listicon">
+                    <image src="../../images/list.png" bindtap='pageChange'></image>
+                    <text>{{cur}}/{{audioList.length}}</text>
+                </view>
+                <view class="buttons">
+                      <image class='button' bindtap='lastMusic' src='../../images/last.png'></image>
+                      <image class='button' bindtap='playOrpause' src='{{playStatus?"../../images/pause.png":"../../images/play.png"}}'></image>
+                      <image class='button' bindtap='nextMusic' src='../../images/next.png'></image>
+                </view>
+            </view>
+      </view>
+</view>
+<view wx:if="{{showlist}}" class="list {{isIPhoneX?'bodyX':'' }}">
+    <view class="broadcast">
+          <image class="left" src="../../images/close.png" bindtap='close'></image>播放列表
+          <view class="back right" bindtap='reve'>
+            <text class="right">倒叙</text>
+            <image class="right" src="../../images/daoxu.png"></image>
+          </view>
+    </view>
+    <view wx:for="{{audioList}}" wx:key="{{index}}" class='item {{audioIndex==index?"active":""}} list-row' bindtap='listClick' data-pos='{{index}}'>
+            <view class="row-left"><text wx:if="{{!flag}}">{{index+1}}</text><text wx:else>{{audioList.length-index}}</text><image src="../../images/60.gif"></image></view>
+             <view class="row-right">
+                <view class="row-title">{{item.title}}</view>
+               <view>{{item.playtimes}}播放<text>{{item.addtime}}</text>时长{{item.minutes}} : {{item.seconds}}</view>
+             </view>
+    </view>
+</view>
+<view class="{{isIPhoneX?'padX':'' }} tabbar flex">
+      <view bindtap="goto">
+            <image src='../../images/jianjie.png'></image>
+            简介
+      </view>
+      <view>
+            <image bindtap="record" wx:if="{{recordS}}" src="../../images/yshoucang.png"></image>
+            <image bindtap='record' wx:else src="../../images/shoucang.png"></image>
+            收藏
+      </view>
+      <view bindtap='go'>
+            <image src="../../images/pinglun.png"></image>
+            评价
+      </view>
+</view>

@@ -1,0 +1,131 @@
+<!-- 全部 -->
+<!-- <image src='../../images/index_01.png' class='search'></image> -->
+<view class='top' bindtap="clickPerson">
+  {{title}}
+  <image class="top-btn {{selectArea ? 'rotateRight' :''}}"  src='../../images/pmxq.png'></image>
+</view>
+<view class='top-content' hidden="{{selectPerson}}">
+  <view class='top-list' bindtap="clickPersonone" data-value="4" data-title="电子银行承兑汇票">
+    <view class='yuan red'></view>
+    <text>电子银行承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="3" data-title="电子商业承兑汇票">
+    <view class='yuan green'></view>
+    <text>电子商业承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="2" data-title="纸质银行承兑汇票">
+    <view class='yuan blue'></view>
+    <text>纸质银行承兑汇票</text>
+  </view>
+  <view class='top-list' bindtap="clickPersonone" data-value="1" data-title="纸质商业承兑汇票">
+    <view class='yuan yellow'></view>
+    <text>纸质商业承兑汇票</text>
+  </view>
+</view>
+<image src='{{front_img}}' data-url="{{front_img}}" bindtap='ckpm' class='img'></image>
+<view class='p1'></view>
+
+<form bindsubmit='saveOrUpdate'> 
+<input hidden='true' value='{{id}}' name='id' ></input>
+<view class='content'>
+  <view class='content-list'>
+    <text class='p2'>票据号码</text>
+    <input type='text' placeholder='票据号码' value='{{invoiceNo}}' name='invoiceNo' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>承兑人全称</text>
+    <input type='text' placeholder='承兑人全称' value='{{acceptorName}}' name='acceptorName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>票据金额</text>
+    <input type='text' placeholder='票据金额' value='{{invoice_amount}}' name='invoice_amount' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>出票日期</text>
+    <input type='text' placeholder='出票日期' value='{{theTicketDate}}' name='theTicketDate' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>汇票到期日</text>
+    <input type='text' placeholder='汇票到期日' value='{{billDueDateOf}}' name='billDueDateOf' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>承兑人开户行行号</text>
+    <input type='text' placeholder='承兑人开户行行号' value='{{acceptorBankNo}}' name='acceptorBankNo' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>承兑人开户行名称</text>
+    <input type='text' placeholder='承兑人开户行名称' value='{{acceptorOpeningBankName}}' name='acceptorOpeningBankName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>承兑人银行账号</text>
+    <input type='text' placeholder='承兑人银行账号' value='{{acceptorAccountNo}}' name='acceptorAccountNo' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>出票人全称</text>
+    <input type='text' placeholder='出票人全称' value='{{theTicketOrgName}}' name='theTicketOrgName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>出票人账号</text>
+    <input type='text' placeholder='出票人账号' value='{{theTicketOrgAccountNo}}' name='theTicketOrgAccountNo' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>出票人开户银行</text>
+    <input type='text' placeholder='出票人开户银行' value='{{theTicketOrgOpeningBankName}}' name='theTicketOrgOpeningBankName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>收款人全称</text>
+    <input type='text' placeholder='收款人全称' value='{{receivablesOrgName}}' name='receivablesOrgName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>收款人账号</text>
+    <input type='text' placeholder='收款人账号' value='{{receivablesOrgAccountNo}}' name='receivablesOrgAccountNo' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>收款人开户银行</text>
+    <input type='text' placeholder='收款人开户银行' value='{{receivablesOrgOpeningBankName}}' name='receivablesOrgOpeningBankName' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>能否转让</text>
+    <input type='text' placeholder='能否转让' value='{{isNetAttorn}}' name='isNetAttorn' class='p3'></input>
+  </view>
+  <view class='content-list'>
+    <text class='p2'>票据状态</text>
+    <input type='text' placeholder='票据状态' value='{{billstatus}}' name='billstatus' class='p3'></input>
+  </view>
+</view>
+<view class='p4'></view>
+<view class='content'>
+  <view class='flex'>
+    <view class='p5'>汇票来源：</view>
+    <view class="section fl">
+      <picker bindchange="bindPickerChange" value="{{index}}" name='source' range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+    </view>
+    <image src='../../images/apply_02.png' class='fr apply-next'></image>
+  </view>
+  <view class='flex two-list'>
+    <view class='p5'>是否成交：</view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}" wx:key="index">
+        
+        
+        <radio value="{{item.name}}"  checked="{{item.checked}}"/>{{item.value}}
+       
+        
+      </label>
+    </radio-group>
+  </view>
+  <view class='flex two-list'>
+    <view class='p5'>汇票联系人：</view>
+    <input type='text' class='p6' value='{{contacts}}' name='contacts'></input>
+  </view>
+  <view class='flex two-list'>
+    <view class='p5'>联系电话：</view>
+    <input type='number' maxlength='11' class='p6 p7' value='{{phone}}' name='phone'></input>
+  </view>
+</view>
+<button class='btn' form-type='submit'>保存</button>
+</form>

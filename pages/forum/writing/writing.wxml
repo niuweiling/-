@@ -1,0 +1,11 @@
+<!--pages/forum/writing/writing.wxml-->
+<view class="content">
+	<view class="title">
+		<input placeholder="标题" placeholder-style="#aaa" value="{{title}}" bindinput="bindTitle" />
+	</view>
+	<view class="write">
+		<textarea placeholder="随便写点什么~" placeholder-style="#aaa" value="{{write}}" bindinput="bindWrite" />
+		</view>
+
+  <button class="send" bindtap="bindSend">发布</button>          
+</view>

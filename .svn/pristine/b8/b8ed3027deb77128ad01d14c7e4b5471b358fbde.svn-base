@@ -1,0 +1,24 @@
+<!-- <image src="../../images/logo.png" class="logo-icon"></image>
+<image src='../../images/logo-text.png' class='logo-text'></image> -->
+<text class="title">新用户注册</text>
+<view class="info">
+  <view class='list a1'>
+    <image src="/images/login/username.png" class="icon"/>
+    <input placeholder='请输入手机号码' bindinput="blurphone" value="{{phone}}" type='number' maxlength='11'></input>
+  </view>
+  <view class='list a2 flex'>
+    <image src="/images/login/modify.png" class="icon"/>
+    <input placeholder="请输入密码" value="{{password}}" password="{{showView}}" maxlength="25" bindinput="blurpsw"/>
+    <image src="/images/login/hide.png" class="password" wx:if="{{showView}}" bindtap='eyeclick'/>
+    <image src="/images/login/show.png" class="password" wx:else bindtap='eyeclick'/>
+
+  </view>
+  <view class='yzm flex'>
+    <image src="/images/login/code.png" class="codeIcon"/>
+    <input placeholder='请输入验证码' bindinput="blurverify"></input>
+    <text class="{{is_show?'show':'hide'}} hq" bindtap="clickVerify">获取验证码</text>
+    <text class="{{is_show?'hide':'show'}} hq">{{last_time}}秒后重新获取</text>
+  </view>
+  <button class="register" bindtap='register'>提交</button>
+  <view class='agree' bindtap='openxy'>点击注册即代表您同意《云票据服务协议》</view>
+</view>

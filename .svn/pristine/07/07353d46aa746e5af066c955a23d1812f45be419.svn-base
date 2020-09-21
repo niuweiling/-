@@ -1,0 +1,7 @@
+<image src="../../images/logo.png" class="logo-icon"></image>
+<image src='../../images/logo-text.png' class='logo-text'></image>
+<button class='yyzh' bindtap='logintap'>已有账号</button>
+<button class='wechat' bindtap='weixinlogin'>微信快捷登录</button>
+<view class='text' bindtap='zhuce'>新用户注册</view>
+<view class='num' bindtap='calling'>客服电话：400-628-7087</view>
+

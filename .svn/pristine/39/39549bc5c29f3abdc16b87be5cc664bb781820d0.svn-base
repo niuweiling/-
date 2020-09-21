@@ -1,0 +1,176 @@
+//app.js  
+// 这里是调用公共函数库  
+var util = require('./utils/util.js');
+var utilMd5 = require('./utils/md5.js');
+App({
+ 
+  /**  
+  * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）                                                                                                                                 
+  */
+  onLaunch: function (options) {
+    // 调用API从本地缓存中获取数据  
+    var that = this
+    
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs);
+    var user = wx.getStorageSync('user') == "" ? [] : wx.getStorageSync('user')
+    if (user[0] && user[1]) {
+      that.globalData.uid = user[0];
+      that.globalData.token = user[1];
+      console.log('user：' + user[0] + ",user[1]:" + user[1]);
+
+    }else{
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
+   console.log(wx.getStorageSync('userInfo'))
+
+  },
+
+  /**  
+  * 当小程序启动，或从后台进入前台显示，会触发 onShow  
+  */
+  onShow: function (options) {
+    var that = this;
+    that.checkMobilePhone();
+    var openid = wx.setStorageSync('cacheopenid', openid);
+    if (openid == '' || openid == null || Object.prototype.toString.call(openid) === '[object Undefined]'){
+      that.getLogin();
+    }
+  },
+  
+  checkMobilePhone: function () {
+    var self = this;
+    wx.getSystemInfo({
+      success: function (e) {
+        var a = e.model;
+        if (a.search("iPhone X") != -1 || a.search("iPhone XS") != -1) {//找到
+          self.globalData.isIPhoneX = true;
+        } else {
+          self.globalData.isIPhoneX = false
+        }
+      }
+    })
+  },
+
+  getLogin: function(){
+    var that = this;
+    wx.login({
+      success: function (res) {
+        var code = res.code// 登录凭证  
+        wx.request({
+          url: getApp().globalData.url + '/jscode2session.html',
+          data: {
+            code: code
+          },
+          method: 'GET',
+          header: {
+            'content-type': 'application/json'
+          },
+          success: function (res) {
+            var openid = res.data.openid //返回openid
+            that.globalData.openid = openid;
+            wx.setStorageSync('cacheopenid', openid);
+            console.log('openid:'+openid)
+            return openid;
+          }
+        })
+      }
+    }) ;  
+  },
+
+  /**  
+  * 获取用户信息  
+  */
+  getUserInfo: function () {
+
+    var that = this
+
+    if (this.globalData.userInfo) {
+
+      wx.setStorageSync('cacheuserInfo', this.globalData.userInfo);
+
+      console.log('getUserInfo.....true')
+
+    } else {
+      console.log('getUserInfo.....false,登录接口')
+      // 获取用户信息  
+      wx.getUserInfo({
+        success: function (res2) {
+          that.globalData.userInfo = res2.userInfo
+          console.log(res2.userInfo)
+          wx.setStorageSync('cacheuserInfo', res2.userInfo);
+
+        },
+        // 这里是点击拒绝触发的方法  
+        fail: function (res2) {
+          wx.openSetting({
+            success: (res) => {
+              if (res.authSetting["scope.userInfo"]) {
+                that.getUserInfo()
+              }
+            }
+          })
+        }
+      })
+    }
+  },
+  getaccess_token:function(){
+    var access_token = utilMd5.hexMD5("cpiaoju^#^^-^" + this.gettimestamp());
+    return access_token;
+   
+  },
+  gettimestamp:function(){
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    return timestamp;
+  },
+
+  setUid: function (uid, token){
+    debugger
+    this.globalData.uid = uid;
+    this.globalData.token = token;
+    //清空缓存
+    var user = [];
+    wx.setStorageSync('user', user);
+    //重新缓存新对象
+    user[0] = uid;
+    user[1] = token;
+    wx.setStorageSync('user', user);
+  },
+
+  message: function (message) {
+    wx.showModal({
+      title: '提示',
+      content: message,
+      success: function (res) {
+
+      }
+    })
+  },
+
+  /**  
+  * 全局变量配置（在这里放一些常量和配置文件，如果公共参数多的话大家也可以去重新布局一个文件，在里面进行设置）  
+  */
+  globalData: {
+    userInfo: null,
+    openid:'',
+    uid:'',
+    token:'',
+    cdharray :[],//承兑行类型
+    // role:1,
+    // url: 'https://pay.cpiaoju.com',//正式服务器
+    // newurl: 'https://www.cpiaoju.com',
+
+    url: 'http://test.cpiaoju.com:8088/billMate',//测试服务器
+    newurl:'http://test.cpiaoju.com:8082/',
+    isIPhoneX:false
+
+   
+  }
+})
+
+
+

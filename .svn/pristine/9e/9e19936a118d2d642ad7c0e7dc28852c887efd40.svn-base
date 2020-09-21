@@ -1,0 +1,45 @@
+<!--pages/card/carddetail/carddetail.wxml-->
+<view class="container">
+  <view class="edit-list">
+  
+    <text class="list-name list-first fl">头像</text>
+    <image class="fr arrow" src="../../images/arrow.png"></image>
+  
+    <view class="edit-right-bar fr">
+    
+      <image class="head-portrait" src="{{avatar}}" bindtap='changeAvatar'></image>
+      </view>
+  </view>
+  <view class="edit-list edit-list2">
+    <text class="list-first fl">姓名</text>
+    <input type='text' placeholder='请输入姓名' maxlength='8' bindblur="blurname" class="edit-user" value='{{name}}' id="uname"></input>
+  </view>
+  <view class="edit-list edit-list2">
+    <text class="list-first fl">联系方式</text>
+    <input type='number' placeholder='请输入联系方式' maxlength='11' bindblur="blurVal" class="edit-user" value='{{phone}}' id="phone"></input>
+  </view>
+  <view class="edit-list edit-list2">
+    <text class="list-first fl">职务</text>
+    <input type='text' placeholder='请输入职务' maxlength='15' bindblur="blurposition" class="edit-user" value='{{position}}'></input>
+  </view>
+  <view class="edit-list edit-list2">
+    <text class="list-first fl">公司</text>
+    <input type='text' placeholder='请输入公司名称' maxlength='50' bindblur="blurorgname" class="edit-user" value='{{org_name}}'></input>
+  </view>
+  <view class="edit-list edit-list2">
+    <text class="list-first fl">办公地址</text>
+    <input type='text' placeholder='请输入办公地址' maxlength='100' bindblur="bluraddress" class="edit-user" value='{{address}}'></input>
+  </view>
+  <view class="edit-list4">
+    <text class="list-first" style='margin-top:10rpx'>业务介绍</text>
+    <textarea class="weui-textarea" maxlength="200" placeholder='请输入业务介绍' bindinput="blurbpt" value='{{bpt}}'></textarea>
+    <view class='clear'></view>
+  </view>
+
+</view>
+<view class="flex-row">
+  <button size="{{primarySize}}" bindtap="getinfor" form-type="submit" class="keepBtn">编辑</button>
+</view>
+<modal hidden="{{hidden}}" title="{{mtitle}}" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}" style="position:absolute;z-index:12;">
+  <text style="display:block;margin-left:80rpx;line-height:40rpx;">{{content}}</text>
+</modal>

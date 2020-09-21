@@ -1,0 +1,87 @@
+
+
+<view style="display:{{showModel2}}">
+
+<view style="display:{{contentcss}}">
+
+<view class="content">
+  <view class='top'>
+    <view class='top-item flex'  bindtap='myxq'>
+      <view class='left'>
+
+        <text class='l1'>{{name}}</text>
+        <text class='l2'>{{position}}</text>
+        <view class='l2 zyyw'><block wx:if='{{bpt != ""}}'>主营业务：{{bpt}}</block></view>
+      </view>
+      <view class='center'>
+        <image src='{{avatar}}' class='my-img'></image>
+      </view>
+      <view class='right'>
+        <image src='../images/apply_02.png' class='my-next'></image>
+      </view>
+    </view>
+    <view class='top-bottom flex'>
+      <view class='bottom-list'  bindtap='myliul' data-name='souc'>
+        <text>{{soucCount}}</text>
+        <text>收藏</text>
+      </view>
+      <view class='bottom-list' bindtap='myliul' data-name='liul'>
+        <text>{{liulCount}}</text>
+        <text>浏览</text>
+      </view>
+      <view class='bottom-list' bindtap='myliul' data-name='dianz'>
+        <text>{{dianzCount}}</text>
+        <text>点赞</text>
+      </view>
+    </view>
+  </view>
+  <!-- 修改密码 -->
+  <view class='list flex' bindtap='xgmm'>
+    <image src='../images/my_02.png' class='xjjl'></image>
+    <text>修改密码</text>
+    <image src='../images/apply_03.png' class='next fr'></image>
+  </view>
+  <!-- 关于我们 -->
+  <view class='list flex' bindtap='gywm'>
+    <image src='../images/my_03.png' class='xjjl'></image>
+    <text>关于我们</text>
+    <image src='../images/apply_03.png' class='next fr'></image>
+  </view>
+  <!-- 联系客服 -->
+  <view class='list flex'>
+    <image src='../images/my_04.png' class='xjjl'></image>
+    <text>联系客服</text>
+    <text id='number' bindtap='calling'>400-628-7087</text>
+  </view>
+  <button class='mylogout' bindtap='mylogout'>退出登录</button>
+</view>
+
+</view>
+
+
+ <view style="display:{{nowLogincss}}">
+
+    <image src="../images/logo.png" class="logo-icon"></image>
+  <image src='../images/logo-text.png' class='logo-text'></image>
+
+  <text style="margin-top:7%;font-size:16px;color:#757375;display:flex;align-items:center;justify-content:center;">此功能需要登录/授权才能继续</text>
+
+  <button class='yyzh' open-type="getUserInfo" bindgetuserinfo='nowLogin'  lang="zh_CN">立即登录</button>
+ 
+ </view>
+ </view>
+
+
+ <view style="display:{{showModel}}">
+  
+
+    <image src="../images/logo.png" class="logo-icon"></image>
+  <image src='../images/logo-text.png' class='logo-text'></image>
+
+  <text style="margin-top:7%;font-size:16px;color:#757375;display:flex;align-items:center;justify-content:center;">此功能需要您的授权才能继续</text>
+
+  <button open-type="getUserInfo" class="yyzh" bindgetuserinfo="getMeuser" lang="zh_CN">去设置</button>
+
+  
+ 
+ </view>

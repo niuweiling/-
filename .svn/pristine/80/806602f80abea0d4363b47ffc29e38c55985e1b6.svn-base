@@ -1,0 +1,14 @@
+<!--pages/class/class.wxml-->
+<view class="container {{isIPhoneX?'bodyX':''}}">
+    <view class="row" wx:for="{{class}}" wx:key="class" bindtap="goto"  data-id="{{item.id}}">
+          <image class="cart-thumb" src="{{'https://' + item.pic}}"></image>
+           <view class="border">
+                  <text class="title">{{item.title}}</text>
+                  <view class="wd">{{item.content}}</view>
+                  <view class="binfor">{{item.totalnum}}集<text>|</text>{{item.listennum}}人收听</view>
+            </view>
+    </view>
+</view>
+<view class="{{isIPhoneX?'padX':'' }} record" bindtap='goRecord'>
+      收藏夹
+</view>

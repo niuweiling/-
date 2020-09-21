@@ -1,0 +1,25 @@
+<!--pages/forum/picture/picture.wxml-->
+<view class="content">
+  <view class="title">
+    <input placeholder="标题"
+           placeholder-style="#aaa"
+           value="{{title}}"
+           bindinput="bindTitle"/>
+  </view>
+  <view class="write">
+    <textarea placeholder="随便写点什么~"
+              placeholder-style="#aaa"
+              class="textarea"
+              maxlength="-1"
+              value="{{write}}"
+              bindinput="bindWrite"/>
+    <view class="imgBox">
+      <block wx:for="{{chooseUrl}}" wx:key="index">
+        <image src="{{'https://' + item}}" data-url="{{item}}" class="img" bindtap="ckpm" disabled/>
+      </block>
+      <image src="/images/forum/choose.png" class="img" bindtap="handleChoose" hidden="{{isShow}}"/>
+    </view>
+  </view>
+
+  <button class="send" bindtap="bindSend">发布</button>
+</view>

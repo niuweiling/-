@@ -1,0 +1,83 @@
+/* pages/forum/sell/sell.wxss */
+.content{
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.title{
+  background-color: #fff;
+  width: 100%;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  color: #101010;
+  padding: 16rpx 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.title input{
+  border: 1px solid #e6e6e6;
+}
+.info{
+  background-color: #fff;
+  width: 100%;
+  font-size: 24rpx;
+  color: #101010;
+  padding-top: 20rpx;
+  padding-left: 24rpx;
+  padding-bottom: 32rpx;
+  margin-top: 28rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.infoItem{
+  margin-bottom: 10rpx;
+  display: flex;
+}
+.infoItem .key{
+  line-height: 44rpx;
+  margin-right: 20rpx;
+}
+.infoItem .value{
+  flex-grow: 1;
+  padding-left: 20rpx;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+.infoImage{
+  width: 204rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+}
+.infoImage image{
+  width: 100%;
+  height: 100%;
+}
+.infoBtn{
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+  display: flex;
+  justify-content: flex-end;
+}
+.infoBtn image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 16rpx;
+}
+.infoBtn text{
+  line-height: 50rpx;
+  font-size: 24rpx;
+  color: #101010;
+}
+.send{
+  display: block;
+  background-color: #518CEE;
+  width: 460rpx;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 40rpx;
+  border-radius: 72rpx;
+}

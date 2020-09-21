@@ -1,80 +1,95 @@
 /* pages/my/myjl/myjl.wxss */
-.top{
-  background: #fff;
-  height: 80rpx;
-  line-height: 80rpx;
+.top {
+	background: #fff;
+	height: 80rpx;
+	line-height: 80rpx;
 }
-.top view{
-  width: 33.33%;
-  height: 80rpx;
-  text-align: center;
-  font-size: 28rpx;
-  color: #101010;
+
+.top view {
+	width: 33.33%;
+	height: 80rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #101010;
 }
-.top view text{
-  display:inline-block;
+
+.top view text {
+	display: inline-block;
 }
-.top view text.cur{
-  color: #8797ED;
-  border-bottom: solid #8797ED 3px
+
+.top view text.cur {
+	color: #8797ED;
+	border-bottom: solid #8797ED 3px
 }
-.content{
-  padding: 0 20rpx;
-  box-sizing: border-box;
+
+.content {
+	padding: 0 20rpx;
+	box-sizing: border-box;
 }
-.list{
-  background: #fff;
-  width: 100%;
-  padding: 20rpx 20rpx 0;
-  box-sizing: border-box;
-  border-radius: 10rpx;
-  margin-top: 40rpx;
+
+.list {
+	background: #fff;
+	width: 100%;
+	padding: 20rpx 20rpx 0;
+	box-sizing: border-box;
+	border-radius: 10rpx;
+	margin-top: 40rpx;
 }
-.list-top{
-  padding-bottom: 20rpx;
-  border-bottom: solid #e6e6e6 1px;
+
+.list-top {
+	padding-bottom: 20rpx;
+	border-bottom: solid #e6e6e6 1px;
 }
-.left{
-  width: 85%
+
+.left {
+	width: 85%
 }
-.left view{
-  font-size: 28rpx;
-  color: #101010;
-  margin-top: 10rpx;
+
+.left view {
+	font-size: 28rpx;
+	color: #101010;
+	margin-top: 10rpx;
 }
-#one{
-  display: inline-block;
-  font-size: 32rpx;
-  margin-right: 10rpx;
+
+#one {
+	display: inline-block;
+	font-size: 32rpx;
+	margin-right: 10rpx;
 }
-.right{
-  width: 15%;
+
+.right {
+	width: 15%;
 }
-.img{
-  width: 110rpx;
-  height: 110rpx;
+
+.img {
+	width: 110rpx;
+	height: 110rpx;
 }
-.list-bottom{
-  height: 80rpx;
-  line-height: 80rpx;
-  text-align: center;
-  padding: 0 39%;
+
+.list-bottom {
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	padding: 0 39%;
 }
-.list-bottom view{
-  line-height: 80rpx;
-  font-size: 28rpx;
-  color: #8797ED;
+
+.list-bottom view {
+	line-height: 80rpx;
+	font-size: 28rpx;
+	color: #8797ED;
 }
-.phone{
-  width: 50rpx;
-  height: 50rpx;
-  display: inline-block;
-  margin-top: 10rpx;
-  margin-right: 10rpx;
+
+.phone {
+	width: 50rpx;
+	height: 50rpx;
+	display: inline-block;
+	margin-top: 10rpx;
+	margin-right: 10rpx;
 }
-.h10{
-  font-size: 28rpx;
-  color: #757375;
-  text-align: center;
-  margin-top: 135rpx;
+
+.h10 {
+	font-size: 28rpx;
+	color: #757375;
+	text-align: center;
+	margin-top: 135rpx;
 }

@@ -1,0 +1,39 @@
+<!--pages/forum/sell/sell.wxml-->
+
+<view class="content">
+  <view class="title">
+    <text class="titleTxt">标题：</text>
+    <input value="{{title}}" bindinput="handleTitle" class="titleTrend"/>
+  </view>
+  <view class="info">
+    <view class="infoItem">
+      <text class="key">在户出承兑人:</text>
+      <input placeholder="{{acceptorName}}" value="{{acceptorName}}" class="value" bindinput="handleCdr"/>
+    </view>
+    <view class="infoItem">
+      <text class="key">票面金额:</text>
+      <input placeholder="{{invoice_amount}}" value="{{invoice_amount}}" class="value" bindinput="handlePmje"/>
+    </view>
+    <view class="infoItem">
+      <text class="key">到期日:</text>
+      <!-- <input placeholder="{{billDueDateOf}}" value="{{billDueDateOf}}" class="value" bindinput="handleDate"/> -->
+      <picker class="value" mode="date" value="{{billDueDateOf}}" start="2000-09-01" end="2100-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          当前选择: {{billDueDateOf}}
+        </view>
+      </picker>
+    </view>
+    <view>有能接收的请私信我</view>
+    <view class="infoImage">
+      <block wx:for="{{chooseUrl}}" wx:key="index">
+        <image src="{{'https://' + item}}" data-url="{{'https://' + item}}" bindtap="ckpm"/>
+      </block>
+      <!-- <image src="{{'https://' + chooseUrl}}" data-url="{{'https' + chooseUrl}}" bindtap="ckpm"/> -->
+    </view>
+    <view class="infoBtn" bindtap="chooseImage">
+      <image src="/images/forum/album.png"/>
+      <text>图片识别</text>
+    </view>
+  </view>
+  <button class="send" bindtap="send">发布</button>
+</view>

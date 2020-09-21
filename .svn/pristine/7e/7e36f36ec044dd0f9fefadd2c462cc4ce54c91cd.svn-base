@@ -1,0 +1,34 @@
+/* pages/bank/bank.wxss */
+page{
+  background:#eee;
+}
+.container{
+  padding:0 2%;
+  height:100%;
+  background:#eee;
+}
+.v-mode{
+  width:98%;
+  height:70rpx;
+  line-height:70rpx;
+  padding-left: 2%;
+  background:#fff;
+  font-size:30rpx;
+  color:#666;
+  }
+.margintop0{
+  margin-top:0;
+}
+.tips{
+  font-size: 24prx !important;
+  color: #969296;
+}
+.queryBtn{
+  background-color: #518CEE;
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  border-radius: 72rpx;
+  margin-top: 100rpx;
+}

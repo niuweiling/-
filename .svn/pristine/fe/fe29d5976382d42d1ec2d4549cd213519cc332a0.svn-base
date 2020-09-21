@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class="login">
+  <view class="register" bindtap="register">新用户注册</view>
+  <view class="loginBox">
+    <view class="loginTab">
+      <text class="current">密码登录</text>
+      <text bindtap="handleQuick">快捷登录</text>
+    </view>
+    <view class="loginItem">
+      <image src="/images/login/username.png" class="icon"/>
+      <input placeholder="请输入手机号码" value="{{username}}" bindinput="handleUsername"/>
+    </view>
+    <view class="loginItem">
+      <image src="/images/login/modify.png" class="icon"/>
+      <input placeholder="请输入密码" value="{{password}}" bindinput="handlePassword" password="{{isShow}}"/>
+      <image src="/images/login/hide.png" class="eyeIcon" wx:if="{{isShow}}" bindtap="handleEye"/>
+      <image src="/images/login/show.png" class="eyeIcon" wx:else bindtap="handleEye"/>
+    </view>
+    <button class="loginBtn" bindtap="loginBtn">登录</button>
+    <button bindtap="weixinlogin" class="wechatBtn">微信登录</button>
+    <!-- <view class="wechat">
+      <image src="/images/login/wechat.png"/>
+      <button class="wechatBtn">微信登录</button>
+    </view> -->
+  </view>
+</view>
+
+<view class="customer" bindtap="handlePhone">客服电话：400-628-7087</view>

@@ -1,0 +1,189 @@
+// pages/forum/sell/sell.js
+const app = getApp()
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    acceptorName: '承兑人公司', //承兑人名称
+    billDueDateOf: '年-月-日', //汇票到期日
+    invoice_amount: '10000.00', //票面金额
+    draft_type: '商票', //商票
+    chooseUrl: [],
+    current: '',
+    urls: []
+  },
+  // 获取在出户承兑人的值
+  handleCdr(e){
+    this.setData({
+      acceptorName: e.detail.value
+    })
+  },
+  // 获取票面金额的值
+  handlePmje(e){
+    this.setData({
+      invoice_amount: e.detail.value
+    })
+  },
+
+  // 获取到期日的值
+  bindDateChange(e){
+    this.setData({
+      billDueDateOf: e.detail.value
+    })
+  },
+
+  handleType(e){
+    this.setData({
+      draft_type: e.detail.value
+    })
+  },
+
+  // 图片识别
+  chooseImage(){
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res)=> {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        // 请求识别接口
+        this.choose(tempFilePaths)
+        wx.showLoading({
+          title: '加载中...',
+        })
+      }
+    })
+  },
+
+  // 请求识别接口
+  choose: function(file) {
+    wx.uploadFile({
+      url: app.globalData.newurl +'/api/v1/common/discern',
+      formData: {
+        access_token: app.getaccess_token(),
+        timestamp: app.gettimestamp(),
+        uid: app.globalData.uid + "",
+        type: 4,
+      },
+      filePath:file[0],
+      name:'file',
+      method: 'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res=>{
+        wx.hideLoading()
+        let obj = JSON.parse(res.data)
+        if(obj.status == '10001'){
+          console.log(obj.data)
+          const img = obj.data.img;
+          const oldUrl = this.data.chooseUrl;
+          oldUrl.push(img)
+          this.setData({
+            acceptorName: obj.data.acceptorName,
+            invoice_amount: obj.data.invoice_amount,
+            billDueDateOf: obj.data.billDueDateOf,
+            chooseUrl: oldUrl
+          })
+          if(obj.data.draft_type == "4"){
+            this.setData({
+              draft_type: '银票'
+            })
+          }
+        }else{
+          console.log(obj.message)
+        }
+      }
+    })
+  },
+  // 发布
+  send(){
+    if(this.data.acceptorName == null || this.data.acceptorName == ""){
+      this.message('点击识别图片')
+    }else{
+      wx.request({
+        url: app.globalData.newurl + '/api/v1/bbs/store',
+        data: {
+          access_token: app.getaccess_token(),
+          timestamp: app.gettimestamp(),
+          uid: app.globalData.uid + "",
+          token: app.globalData.token,
+          type: 1,
+          content: '在出户承兑人' + this.data.acceptorName + '\n到期日：' + this.data.billDueDateOf + '\n票面金额：' + this.data.invoice_amount,
+          title: '在出户：' + this.data.acceptorName + '、' + this.data.invoice_amount + '的' + this.data.draft_type,
+          images: JSON.stringify(this.data.chooseUrl || []),
+          bid: ""
+        },
+        method: 'POST',
+        header: {
+          'content-type': 'application/json'
+        },
+        success: res=>{
+          if(res.data.status == '10001'){
+            wx.reLaunch({
+              url: '/pages/shouye/index/index'
+            })
+          }else{
+            console.log(res.data.message)
+          }
+        }
+      })
+    }
+  },
+
+  // 查看大图
+  ckpm: function (event) {
+    var url = event.currentTarget.dataset.url;//获取data-src
+    var urls = [event.currentTarget.dataset.url]
+    console.log(url, urls)
+    //图片预览
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: urls // 需要预览的图片http链接列表
+    })
+  },
+
+
+  /* 生命周期函数--监听页面加载 */
+  onLoad: function (options) {
+    
+  },
+
+  /* 生命周期函数--监听页面初次渲染完成 */
+  onReady: function () {
+
+  },
+
+  /* 生命周期函数--监听页面显示 */
+  onShow: function () {
+
+  },
+
+  /* 生命周期函数--监听页面隐藏 */
+  onHide: function () {
+
+  },
+
+  /* 生命周期函数--监听页面卸载 */
+  onUnload: function () {
+
+  },
+
+  /* 页面相关事件处理函数--监听用户下拉动作 */
+  onPullDownRefresh: function () {
+
+  },
+
+  /* 页面上拉触底事件的处理函数 */
+  onReachBottom: function () {
+
+  },
+
+  /* 用户点击右上角分享 */
+  onShareAppMessage: function () {
+
+  }
+})

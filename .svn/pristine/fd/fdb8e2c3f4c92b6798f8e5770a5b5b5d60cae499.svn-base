@@ -1,0 +1,215 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.4",
+	"appid": "wx9f31a50e8ca44cef",
+	"projectname": "new_weixinxcx",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "详情页",
+					"pathName": "pages/class/classlist/classlist",
+					"query": "id=28"
+				},
+				{
+					"id": -1,
+					"name": "贴现计算器",
+					"pathName": "pages/cal/cal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "票据课堂",
+					"pathName": "pages/class/class",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "乐享计算器",
+					"pathName": "pages/counter/counter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "汇票收藏",
+					"pathName": "pages/shouye/hpsc/hpsc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "大额行号",
+					"pathName": "pages/bank/bank",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "授信申请",
+					"pathName": "pages/shouye/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "shibor",
+					"pathName": "pages/shibor/shibor",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/my/myzhuce/myzhuce",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/buy/buy",
+					"pathName": "pages/forum/buy/buy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/picture/picture",
+					"pathName": "pages/forum/picture/picture",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shouye/apply/apply",
+					"pathName": "pages/shouye/apply/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/forum",
+					"pathName": "pages/forum/forum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/sell/sell",
+					"pathName": "pages/forum/sell/sell",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shouye/hpsc/hpsc",
+					"pathName": "pages/shouye/hpsc/hpsc",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/card/card",
+					"pathName": "pages/card/card",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/card/carddetail/carddetail",
+					"pathName": "pages/card/carddetail/carddetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/forum",
+					"pathName": "pages/forum/forum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forum/forum",
+					"pathName": "pages/forum/forum",
+					"scene": null
+				}
+			]
+		}
+	}
+}

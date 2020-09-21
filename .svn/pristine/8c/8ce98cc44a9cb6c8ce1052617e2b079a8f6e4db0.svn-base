@@ -1,0 +1,40 @@
+/* pages/send/send.wxss */
+.content{
+  background-color: #090B0D;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.68;
+}
+.info{
+  width: 100%;
+  padding: 700rpx 94rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.info .infoItem{
+  width: 90rpx;
+}
+.infoItem image{
+  display: block;
+  width: 100%;
+  height: 90rpx;
+}
+.infoItem text{
+  display: block;
+  width: 100%;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  margin-top: 14rpx;
+}
+.sendClose{
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  margin: 140rpx auto 0;
+}

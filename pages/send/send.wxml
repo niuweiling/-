@@ -1,0 +1,22 @@
+<!--pages/send/send.wxml-->
+<view class="content">
+	<view class="info">
+		<view class="infoItem">
+			<image src="/images/forum/01.png" bindtap="handleSell" />
+			<text>卖票</text>
+		</view>
+		<view class="infoItem">
+			<image src="/images/forum/02.png" bindtap="handleBuy" />
+			<text>收票</text>
+		</view>
+		<view class="infoItem">
+			<image src="/images/forum/03.png" bindtap="handleWrite" />
+			<text>文字</text>
+		</view>
+		<view class="infoItem">
+			<image src="/images/forum/04.png" bindtap="handlePic" />
+			<text>图片</text>
+		</view>
+	</view>
+	<image src="/images/forum/close.png" class="sendClose" bindtap="close" />
+</view>

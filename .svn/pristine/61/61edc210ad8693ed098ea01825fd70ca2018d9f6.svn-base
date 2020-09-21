@@ -1,0 +1,257 @@
+/* pages/forum/forum.wxss */
+.content{
+  width: 100%;
+  padding: 20rpx 20rpx 120rpx;
+  box-sizing: border-box;
+}
+.model{
+  background-color: #fff;
+  width: 100%;
+  min-height: 432rpx;
+  padding: 10rpx 30rpx 40px;
+  box-sizing: border-box;
+  position: fixed;
+  top:0;
+  left: 0;
+}
+.detailImg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* justify-content: space-around; */
+}
+.detailImg image{
+  width: 33.3%;
+}
+.top{
+  overflow: hidden;
+}
+.top image{
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+  border-radius: 100%;
+}
+.username{
+  float: left;
+  width: 550rpx;
+  font-size: 24rpx;
+}
+.times{
+  float: left;
+  font-size: 24rpx;
+  margin-top: 5rpx;
+}
+.info{
+  margin-top: 10rpx;
+}
+.info .infoTitle{
+  font-size: 28rpx;
+  color: #101010;
+}
+.info .infoItem{
+  line-height: 40rpx;
+  font-size: 24rpx;
+}
+.info .infoImg{
+  width: 200rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+}
+.infoTab{
+  width: 100%;
+  margin-top: 20rpx;
+  display: flex;
+  position: absolute;
+  bottom: 20rpx;
+}
+.infoTabItem{
+  flex: 1;
+  /* text-align: center; */
+  /* margin-left: -30rpx; */
+}
+.infoTabItem image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  vertical-align: middle;
+}
+.infoTabItem text{
+  font-size: 24rpx;
+  color: #101010;
+}
+
+/* 全部评论 */
+.all{
+  padding-top: 480rpx;
+}
+.allTitle{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #101010;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.allContent{
+  background-color: #fff;
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+  padding-bottom: 30rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.allItem{
+  padding-top: 30rpx;
+}
+.allInfo{
+  overflow: hidden;
+}
+.allInfo image{
+  float: left;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.allInfo .name{
+  float: left;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #101010;
+}
+.allInfo .hour{
+  float: right;
+  font-size: 24rpx;
+  color: #676A6C;
+}
+.allTxt{
+  font-size: 28rpx;
+  color: #101010;
+  margin-top: 10rpx;
+  text-align: justify;
+}
+.allImage{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.allImage image{
+  width: 204rpx;
+  height: 160rpx;
+  margin-top: 20rpx;
+}
+
+/* 底部 */
+.foot{
+  background-color: #fff;
+  width: 100%;
+  padding: 30rpx;
+  border-top: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.foot .footContent{
+  width: 480rpx;
+}
+.foot input{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #676A6C;
+  padding-left: 20rpx;
+  margin-right: 20rpx;
+  box-sizing: border-box;
+}
+.foot .footImgShow{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footImgShow image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: 10rpx;
+}
+.foot text{
+  background-color: #518CEE;
+  width: 92rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  margin-right: 40rpx;
+  border-radius: 8rpx;
+}
+.foot .footImg{
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+
+/* 私信弹框 */
+.private{
+  background-color: rgba(0, 0, 0, .3);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.privateBox{
+  background-color: #fff;
+  width: 502rpx;
+  height: 552rpx;
+  color: #101010;
+  text-align: center;
+  padding-top: 80rpx;
+  position: absolute;
+  top: 350rpx;
+  left: 50%;
+  margin-left: -251rpx;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+.privateClose{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+.privateOne{
+  font-size: 28rpx;
+}
+.privateTwo{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.privateImg{
+  display: block;
+  width: 240rpx;
+  height: 240rpx;
+  margin: 30rpx auto 0;
+}
+.privateThree{
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.noData{
+  background-color: #fff;
+  width: 100%;
+  line-height: 70rpx;
+  text-align: center;
+  color: #999;
+}

@@ -1,0 +1,195 @@
+// pages/login/login.js
+const app = getApp()
+const user = require("../../utils/user")
+Page({
+	/* 页面的初始数据*/
+	data: {
+		isShow: true,
+		username: '', //手机号码
+		password: '' //密码
+	},
+	// 跳转到注册
+	register() {
+		wx.reLaunch({
+			url: '/pages/my/myzhuce/myzhuce',
+		})
+	},
+	// 获取手机号
+	handleUsername(e) {
+		this.setData({
+			username: e.detail.value
+		})
+	},
+	// 获取密码
+	handlePassword(e) {
+		this.setData({
+			password: e.detail.value
+		})
+	},
+	// 登录
+	loginBtn() {
+		var that = this;
+		if (this.data.username == null || this.data.username == '') {
+			that.message("手机号不能为空");
+			return;
+		}
+		if (this.data.password == null || this.data.password == '') {
+			that.message("密码不能为空");
+			return;
+		}
+		that.loginrequest(that.data.username, that.data.password);
+	},
+	// 密码登录封装
+	loginrequest: function(phone, password) {
+		var that = this;
+		wx.request({
+			url: app.globalData.url + '/me_login.html',
+			data: {
+				access_token: app.getaccess_token(),
+				timestamp: app.gettimestamp(),
+				phone: phone,
+				password: password,
+				version: "3.0.1",
+				client: "weixin",
+				openid: app.globalData.openid
+			},
+			method: 'GET',
+			header: {
+				'content-type': 'application/json'
+			},
+			success: function(res) {
+				var data = res.data;
+				if (data.status == '1') {
+					app.setUid(data.data.id, data.data.token)
+					wx.navigateBack({
+						delta: 2
+					})
+				} else {
+					that.message(data.message);
+				}
+			}
+		})
+	},
+
+	// 微信登录
+	weixinlogin: function() {
+		var that = this;
+		var openid = wx.getStorageSync('cacheopenid');
+		wx.request({
+			url: app.globalData.url + '/home_weilogin.html',
+			data: {
+				openid: openid
+			},
+			method: 'GET',
+			header: {
+				'content-type': 'application/json'
+			},
+			success: function(res) {
+				console.log('登录成功', res)
+				var data = res.data;
+				if (data.status == '1') {
+					app.setUid(data.data.id, data.data.token)
+					app.globalData.uid = data.data.id;
+					app.globalData.token = data.data.token;
+					console.log(app.globalData.uid, app.globalData.token)
+					wx.reLaunch({
+						url: '/pages/shouye/index/index',
+					})
+
+				} else {
+					console.log("登录失败")
+					wx.navigateTo({
+						url: '/pages/my/myzhuce/myzhuce'
+					})
+				}
+			}
+		})
+	},
+
+	message: function(message) {
+		wx.showModal({
+			title: '提示',
+			content: message,
+			success: function(res) {
+
+			}
+		})
+	},
+
+	// 跳转到快捷登录
+	handleQuick() {
+		wx.redirectTo({
+			url: '/pages/login/loginQuick/loginQuick',
+		})
+	},
+
+	// 判断是否显示密码
+	handleEye() {
+		this.setData({
+			isShow: !this.data.isShow
+		})
+	},
+	// 拨打电话
+	handlePhone() {
+		wx.makePhoneCall({
+			phoneNumber: '400-628-7087',
+		})
+	},
+
+
+	/**
+	 * 生命周期函数--监听页面加载
+	 */
+	onLoad: function(options) {
+		console.log(app.globalData.token)
+	},
+
+	/**
+	 * 生命周期函数--监听页面初次渲染完成
+	 */
+	onReady: function() {
+
+	},
+
+	/**
+	 * 生命周期函数--监听页面显示
+	 */
+	onShow: function() {
+
+	},
+
+	/**
+	 * 生命周期函数--监听页面隐藏
+	 */
+	onHide: function() {
+
+	},
+
+	/**
+	 * 生命周期函数--监听页面卸载
+	 */
+	onUnload: function() {
+
+	},
+
+	/**
+	 * 页面相关事件处理函数--监听用户下拉动作
+	 */
+	onPullDownRefresh: function() {
+
+	},
+
+	/**
+	 * 页面上拉触底事件的处理函数
+	 */
+	onReachBottom: function() {
+
+	},
+
+	/**
+	 * 用户点击右上角分享
+	 */
+	onShareAppMessage: function() {
+
+	}
+})
